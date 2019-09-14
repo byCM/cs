@@ -12,7 +12,6 @@ public class LabProgram {
       
       int numProduct, numAverage;
       double numAverageDouble, numProductDouble;
-      /* Type your code here. */
       
       num1 = scan.nextInt();
       num2 = scan.nextInt();
