@@ -6,8 +6,7 @@ public class LabProgram {
       double userAge, userWeight, userHeart, userTime, userAgeTimes,
       menAge, menWeight, menHeart, menTime, finalMenCalories, finalWomenCalories,
       womenAge, womenHeart, womenTime;
-      
-      
+       
       Scanner scan = new Scanner(System.in);
       userAge = scan.nextDouble();
       userWeight = scan.nextDouble();
