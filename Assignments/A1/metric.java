@@ -22,8 +22,7 @@ public class Volumes {
       
       gallons = quarts / 4;
       remainderOfGallons = quarts % 4;
-      
-      
+            
       System.out.println("Please enter a volume in liters: This volume of " + liters + " liter(s) is equivalent to " + gallons + " gallon(s), " +
       remainderOfGallons + " quart(s), " + remainderOfQuarts + " pint(s), " + remainderOfPints + " cup(s) and " + remainderOfCups + " fluid ounce(s).");
       
