@@ -11,9 +11,15 @@ public class LabProgram {
       
       
       if ((highwayNumber <= 999) && (highwayNumber >= 100)) {
+         if (highwayNumber % 100 == 5) {
+         digit = highwayNumber % 100;
+         System.out.println("The " + highwayNumber + " is auxiliary, serving the " + digit + ", going north/south.");
+      } else {
          digit = highwayNumber % 100;
          System.out.println("The " + highwayNumber + " is auxiliary, serving the " + digit + ", going east/west.");
-      } 
+         }
+      }
+   
       
       if ((highwayNumber <= 99) && (highwayNumber >= 1)) {
          if (highwayNumber % 2 == 0) {
