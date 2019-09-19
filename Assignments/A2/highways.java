@@ -39,7 +39,9 @@ public class LabProgram {
 
 
 
-/*
+
+// With do while loops
+
       do {
          if (highwayNumber % 2 == 0) {
             System.out.println("The " + highwayNumber + " is primary, going east/west.");
@@ -62,5 +64,5 @@ public class LabProgram {
          System.out.println("0 is not a valid interstate highway number.");
          break;
      } while ((highwayNumber < 1) || (highwayNumber > 999)); 
-*/
+
    
