@@ -8,29 +8,15 @@ public class RPS {
      Scanner scan = new Scanner(System.in);
      int seed = scan.nextInt();
      rand.setSeed(seed);
-     int computerChoice = rand.nextInt(3);
-    
+     int computerChoice = rand.nextInt(3);  
      
      int userChoiceNum;
      String userChoice;
      
-    // seed = scan.nextInt();
-    // rand.setSeed(seed);
-     
      userChoice = scan.next();
-     
-     
      
      System.out.println("Enter a seed number and R, P, or S:");
      System.out.println("You entered: " + userChoice);
-     
-     /*if (computerChoice == 0) {
-        System.out.println("The computer played: R");
-     } else if (computerChoice == 1) {
-        System.out.println("The computer played: P");
-     } else if (computerChoice == 2) {
-        System.out.println("The computer played: S");
-     }*/
      
      
      if ((userChoice.equals("r")) || (userChoice.equals("R"))) {
@@ -42,8 +28,9 @@ public class RPS {
      } else {
         userChoiceNum = -1;
         System.out.println("Invalid play, game exiting.");
+        System.exit(0);
      }
-     break;
+     
      
      if (computerChoice == 0) {
         System.out.println("The computer played: R");
@@ -72,8 +59,6 @@ public class RPS {
         System.out.println("You win! Scissors cuts paper");
      } 
      
-     
-   
 
   }
 }
