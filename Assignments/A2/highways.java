@@ -39,7 +39,6 @@ public class LabProgram {
 
 
 
-
 // With do while loops
 
       do {
