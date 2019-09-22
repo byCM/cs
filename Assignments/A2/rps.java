@@ -58,6 +58,7 @@ public class RPS {
      } else if ((userChoiceNum == 2 ) && (computerChoice == 1)) {
         System.out.println("You win! Scissors cuts paper");
      } 
-     
+ 
+    
   }
 }
