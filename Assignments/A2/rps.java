@@ -59,6 +59,5 @@ public class RPS {
         System.out.println("You win! Scissors cuts paper");
      } 
      
-
   }
 }
