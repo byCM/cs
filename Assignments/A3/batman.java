@@ -15,7 +15,7 @@ public class bounce {
 			if (firstDigit != secondDigit && firstDigit != thirdDigit && firstDigit != fourthDigit
 					&& secondDigit != firstDigit && secondDigit != thirdDigit && secondDigit != fourthDigit
 					&& thirdDigit != firstDigit && thirdDigit != secondDigit && thirdDigit != fourthDigit
-					&& fourthDigit != firstDigit && fourthDigit != secondDigit && fourthDigit != thirdDigit && fourthDigit == secondDigit * 3 
+					&& fourthDigit != firstDigit && fourthDigit != secondDigit && fourthDigit != thirdDigit && firstDigit == thirdDigit * 3 
 					&& firstDigit + secondDigit + thirdDigit + fourthDigit == 27 && fourthDigit % 2 == 1) {
 				System.out.println(firstDigit + "" + secondDigit + "" + thirdDigit + "" + fourthDigit);
 			} 
