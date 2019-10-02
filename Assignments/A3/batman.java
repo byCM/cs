@@ -56,7 +56,7 @@ public class batman {
 			
 			if ((f != s && f != t && f != fourth && s != f && s != t && s != fourth && t != f && t != s && t != fourth
 					&& fourth != f && fourth != s && fourth != t) && (f == t * 3) && (f + s + t + fourth == 27) && (fourth % 2 == 1)) {
-				System.out.println(f + "" + s + "" + t + "" + fourth);
+				System.out.println("Riddler plans to strike " + f + "" + s + "" + t + "" + fourth + " Lake Otis Parkway");
 			} 
 
 			
