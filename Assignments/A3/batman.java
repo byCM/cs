@@ -1,9 +1,7 @@
-import java.util.Scanner;
 
 public class bounce {
 
 	public static void main(String[] args) {
-		Scanner keyboard = new Scanner(System.in);
 		int number = 1000;
 		
 		
