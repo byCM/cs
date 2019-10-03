@@ -21,11 +21,16 @@ public class bounce {
 				    height = 0;
 				    time = 0;
 				    System.out.println("Time: " + time + "       Height: " + height + "        Velocity: " + velocity);
-				    for (i = 0; i <= height; i ++) {
+				    for (i = 0; height >= 0; i ++) {
 				    	height += velocity;
 				    	velocity -= 32;
 				    	time++;
 				    	System.out.println("Time: " + time + "       Height: " + height + "        Velocity: " + velocity);
+				    	if(height < 0) {
+				    		System.out.println("Bounce 1");
+				    		for (i = 0; i >= 0; i++) {
+				    		}
+				    	}
 				    }
 				    
 				} else {
@@ -39,3 +44,4 @@ public class bounce {
 			
 	}
 }
+
