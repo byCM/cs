@@ -81,10 +81,11 @@ public class bounce {
 			if(height <= 0){
 				System.out.println("\nBounce " + bounce + "\n");
 				height *= -0.5;
-				velocity *= -0.5;
+				velocity = velocity * -0.5 - 32;
 				bounce++;
 			}
 
 		}while(bounce <= 5 && bounce > 0);
 	}
 }
+
