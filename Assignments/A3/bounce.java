@@ -63,13 +63,17 @@ public class bounce {
 		int bounce = 1;
 		int i;
 		Scanner keyboard = new Scanner(System.in);
-
-
+		
 		System.out.println("Enter initial Velocity: ");
 		velocity = keyboard.nextInt();
+
+		while (velocity <=0) {
+			System.out.println("Please enter a positive integer: ");
+			velocity = keyboard.nextInt();
+		}
 		
 		do{
-			System.out.println("Time: " + time + " Height: " + height + " Velocity: " + velocity);
+			System.out.println("Time:  " + time + " Height:  " + height + " Velocity:  " + velocity);
 			height += velocity;
 			velocity -= 32;
 			time++;
@@ -84,4 +88,3 @@ public class bounce {
 		}while(bounce <= 5 && bounce > 0);
 	}
 }
-
