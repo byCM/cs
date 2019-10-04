@@ -45,3 +45,43 @@ public class bounce {
 	}
 }
 
+
+
+import java.util.Scanner;
+
+
+public class bounce {
+
+	public static void main(String[] args){
+		int time = 0;
+		double height = 0;
+		double velocity = 0;
+		int bounce = 1;
+		int i;
+		Scanner keyboard = new Scanner(System.in);
+
+		System.out.println("Enter initial Velocity: ");
+		velocity = keyboard.nextInt();
+		System.out.println("Initial Velocity: " + velocity);
+		
+
+		
+		do{
+			
+			System.out.println("Time: " + time + " Height: " + height + " Velocity: " + velocity);
+			height += velocity;
+			velocity -= 32;
+			time++;
+			
+			if(height <= 0){
+				System.out.println("\nBounce " + bounce + "\n");
+				height *= -0.5;
+				velocity *= -0.5;
+				bounce++;
+			}
+
+		}while(bounce <= 5 && bounce > 0);
+	}
+}
+
+
