@@ -50,25 +50,22 @@ public class bounce {
 
 
 
-
 import java.util.Scanner;
 
 
 public class bounce {
 
 	public static void main(String[] args){
-		int time = 0;
+		int time = 0, bounce = 1, i;
 		double height = 0;
 		double velocity = 0;
-		int bounce = 1;
-		int i;
 		Scanner keyboard = new Scanner(System.in);
 		
 		System.out.println("Enter initial Velocity: ");
 		velocity = keyboard.nextInt();
 
 		while (velocity <=0) {
-			System.out.println("Please enter a positive integer: ");
+			System.out.println(velocity + " is negative, please enter a positive integer! ");
 			velocity = keyboard.nextInt();
 		}
 		
