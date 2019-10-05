@@ -81,4 +81,3 @@ public class bounce {
 		}while(bounce <= 5 && bounce > 0);
 	}
 }
-
