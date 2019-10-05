@@ -1,5 +1,3 @@
-
-
 public class batman {
 
 	public static void main(String[] args) {	
