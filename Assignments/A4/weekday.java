@@ -19,5 +19,11 @@ public class week {
 		System.out.println(day + " " + month + " " + year);	
 		
 	}
+	
+	public static boolean isLeapYear(String year) {
+		if year
+		return false;
+		
+	}
 
 }
