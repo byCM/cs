@@ -4,25 +4,29 @@ public class week {
 
 	public static void main(String[] args) {
 		getMonth();
+		isLeapYear(0);
 
 	}
 	
 	static void getMonth() {
 		Scanner keyboard = new Scanner(System.in);
-		String day, month, year;
+		int day, month, year;
 		
 		System.out.println("Please enter a date in numbers only (EX: 12 3 2020)");
-		day = keyboard.next();
-		month = keyboard.next();
-		year = keyboard.next();
+		day = keyboard.nextInt();
+		month = keyboard.nextInt();
+		year = keyboard.nextInt();
 		
 		System.out.println(day + " " + month + " " + year);	
 		
 	}
 	
-	public static boolean isLeapYear(String year) {
-		if year
-		return false;
+	public static boolean isLeapYear(int year) {
+		if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)) {
+			return true; 
+		} else {
+			return false;
+		}
 		
 	}
 
