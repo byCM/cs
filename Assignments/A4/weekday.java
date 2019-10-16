@@ -15,6 +15,7 @@ public class week {
 		isLeapYear(year);
 		getCenturyValue(year);
 		getYearValue(year);
+		getMonthValue(month, year);
 
 	}
 	
@@ -39,13 +40,46 @@ public class week {
 		
 	}
 	
-	public static void getYearValue(int year) {
-		int divide;
+	public static int getYearValue(int year) {
 		int digit = Integer.parseInt(Integer.toString(year).substring(2, 4));
-		divide = digit / 4 + digit;
-		System.out.println(digit + " " + divide);
+		return digit / 4 + digit;
 	}
 	
+	public static int getMonthValue(int month, int year) {
+		
+		if (month == 1 && isLeapYear(0) == false) {
+			month = 0;
+		} else if (month == 1 && isLeapYear(0) == true){
+			month =  6;
+		} else if (month == 2 && isLeapYear(0) == false){
+			month = 3;
+		} else if (month == 2 && isLeapYear(0) == true){
+			month = 2;
+		} else if (month == 3) {
+			month = 3;
+		} else if (month == 4) {
+			month = 6;
+		} else if (month == 5) {
+			month = 1;
+		} else if (month == 6) {
+			month = 4;
+		} else if (month == 7) {
+			month = 6;
+		} else if (month == 8) {
+			month = 2;
+		} else if (month == 9) {
+			month = 5;
+		} else if (month == 10) {
+			month = 0;
+		} else if (month == 11) {
+			month = 3;
+		} else if (month == 12) {
+			month = 5;
+		}
+		
+		System.out.println("value: " + month);
+		return month;
+	}
 
 	
 }
