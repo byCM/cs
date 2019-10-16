@@ -14,6 +14,7 @@ public class week {
 		System.out.println(day + " " + month + " " + year);	
 		isLeapYear(year);
 		getCenturyValue(year);
+		getYearValue(year);
 
 	}
 	
@@ -27,11 +28,22 @@ public class week {
 	}
 	
 	public static void getCenturyValue(int year) {
-		int century;
-		int f = Integer.parseInt(Integer.toString(year).substring(0, 2));
-		century = f / 4;
-		System.out.println(f + " "+ century);
+		int century, remainder, minus, times;
+		int digit = Integer.parseInt(Integer.toString(year).substring(0, 2));
+		century = digit / 4;
+		remainder = digit % 4;
+		minus = 3 - remainder;
+		times = minus * 2;
 		
+		System.out.println(digit + " " + century + " " + times);
+		
+	}
+	
+	public static void getYearValue(int year) {
+		int divide;
+		int digit = Integer.parseInt(Integer.toString(year).substring(2, 4));
+		divide = digit / 4 + digit;
+		System.out.println(digit + " " + divide);
 	}
 	
 
