@@ -79,11 +79,15 @@ public class MozartDice {
     System.out.println("Current working directory: " + new File(" ").getAbsolutePath());
     
 
-    Random dice = new Random();
-    int number;
+    Random rand = new Random();
+    int number = rand.nextInt((12 - 2) + 1) + 2;
+    int number2 = rand.nextInt((12 - 2) + 1) + 2;
     
-    for (int i = 0; i < 2; i++) {
-    	
+    int roll = number + number2;
+    
+    for (int i = 0; i < 2; i++) { 
+    	System.out.println(number);
+    	System.out.println(number2);
     }
     
     String filename;
