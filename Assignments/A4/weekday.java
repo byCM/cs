@@ -10,20 +10,15 @@ public class week {
 		day = keyboard.nextInt();
 		month = keyboard.nextInt();
 		year = keyboard.nextInt();
-		
-		System.out.println(day + " " + month + " " + year);	
+			
 		isLeapYear(year);
 		getCenturyValue(year);
 		getYearValue(year);
 		getMonthValue(month, year);
-		
-		System.out.println(isLeapYear(year));
-		System.out.println(getCenturyValue(year));
-		System.out.println(getYearValue(year));
-		System.out.println(getMonthValue(month, year));
-		
+
 		total = day + getMonthValue(month, year) + getYearValue(year) + getCenturyValue(year);
 		remainder = total % 7;
+		
 		
 		if (remainder == 0) {
 			System.out.println("That day of the week is a Sunday");
@@ -42,7 +37,6 @@ public class week {
 		}
 		
 		
-		System.out.println(total);
 	}
 	
 	public static boolean isLeapYear(int year) {
@@ -55,14 +49,9 @@ public class week {
 	}
 	
 	public static int getCenturyValue(int year) {
-		int remainder, minus, times;
 		int digit = Integer.parseInt(Integer.toString(year).substring(0, 2));
-		remainder = digit % 4;
-		minus = 3 - remainder;
-		times = minus * 2;
-		
-		return times;
-		
+		int remainder = (3 - (digit % 4)) * 2;	
+		return remainder;
 	}
 	
 	public static int getYearValue(int year) {
