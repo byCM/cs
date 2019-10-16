@@ -35,8 +35,6 @@ public class week {
 		} else if (remainder == 6) {
 			System.out.println("That day of the week is a Saturday");
 		}
-		
-		
 	}
 	
 	public static boolean isLeapYear(int year) {
