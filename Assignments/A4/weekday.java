@@ -3,12 +3,6 @@ import java.util.Scanner;
 public class week {
 
 	public static void main(String[] args) {
-		getMonth();
-		isLeapYear(0);
-
-	}
-	
-	static void getMonth() {
 		Scanner keyboard = new Scanner(System.in);
 		int day, month, year;
 		
@@ -18,7 +12,9 @@ public class week {
 		year = keyboard.nextInt();
 		
 		System.out.println(day + " " + month + " " + year);	
-		
+		isLeapYear(year);
+		getCenturyValue(year);
+
 	}
 	
 	public static boolean isLeapYear(int year) {
@@ -29,5 +25,15 @@ public class week {
 		}
 		
 	}
+	
+	public static void getCenturyValue(int year) {
+		int century;
+		int f = Integer.parseInt(Integer.toString(year).substring(0, 2));
+		century = f / 4;
+		System.out.println(f + " "+ century);
+		
+	}
+	
 
+	
 }
