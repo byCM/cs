@@ -4,9 +4,9 @@ public class week {
 
 	public static void main(String[] args) {
 		Scanner keyboard = new Scanner(System.in);
-		int day, month, year, total;
+		int day, month, year, total, remainder;
 		
-		System.out.println("Please enter a date in numbers only (EX: 12 3 2020)");
+		System.out.println("Please enter a date in this format: Day, Month, Year (Example: 12 3 2020)");
 		day = keyboard.nextInt();
 		month = keyboard.nextInt();
 		year = keyboard.nextInt();
@@ -18,8 +18,30 @@ public class week {
 		getMonthValue(month, year);
 		
 		System.out.println(isLeapYear(year));
+		System.out.println(getCenturyValue(year));
+		System.out.println(getYearValue(year));
+		System.out.println(getMonthValue(month, year));
 		
 		total = day + getMonthValue(month, year) + getYearValue(year) + getCenturyValue(year);
+		remainder = total % 7;
+		
+		if (remainder == 0) {
+			System.out.println("That day of the week is a Sunday");
+		} else if (remainder == 1) {
+			System.out.println("That day of the week is a Monday");
+		} else if (remainder == 2) {
+			System.out.println("That day of the week is a Tuesday");
+		} else if (remainder == 3) {
+			System.out.println("That day of the week is a Wednesday");
+		} else if (remainder == 4) {
+			System.out.println("That day of the week is a Thursday");
+		} else if (remainder == 5) {
+			System.out.println("That day of the week is a Friday");
+		} else if (remainder == 6) {
+			System.out.println("That day of the week is a Saturday");
+		}
+		
+		
 		System.out.println(total);
 	}
 	
