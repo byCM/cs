@@ -55,9 +55,8 @@ public class week {
 	}
 	
 	public static int getCenturyValue(int year) {
-		int century, remainder, minus, times;
+		int remainder, minus, times;
 		int digit = Integer.parseInt(Integer.toString(year).substring(0, 2));
-		century = digit / 4;
 		remainder = digit % 4;
 		minus = 3 - remainder;
 		times = minus * 2;
@@ -73,11 +72,11 @@ public class week {
 	
 	public static int getMonthValue(int month, int year) {
 		
-		if (month == 1 && isLeapYear(0) == false) {
+		if (month == 1 && isLeapYear(1) == false) {
 			return 0;
 		} else if (month == 1 && isLeapYear(0) == true){
 			return  6;
-		} else if (month == 2 && isLeapYear(0) == false){
+		} else if (month == 2 && isLeapYear(1) == false){
 			return 3;
 		} else if (month == 2 && isLeapYear(0) == true){
 			return 2;
@@ -102,7 +101,7 @@ public class week {
 		} else if (month == 12) {
 			return 5;
 		} else {
-		return month;
+			return month;
 		}
 	}
 
