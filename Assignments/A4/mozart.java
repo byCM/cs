@@ -80,41 +80,29 @@ public class MozartDice {
     
 
     Random rand = new Random();
-    int number = rand.nextInt((6 - 1) + 1) + 1;
-    
-    
-    for (int i = 0; i < 17; i++) { 
+
+    for (int i = 0; i < 16; i++) { 
         int roll1 = rand.nextInt((6 - 1) + 1) + 1;
     	int roll2 = rand.nextInt((6 - 1) + 1) + 1;
     	int sum = roll1 + roll2;
     	
-    	System.out.println(sum);
     	String filename;
-    	filename = "m" + minuets[sum][1] + ".wav";
+    	filename = "m" + minuets[i][sum - 2] + ".wav";
         System.out.println(filename);
         playFile(filename);
     }
     
-    int roll1 = rand.nextInt((6 - 1) + 1) + 1;
-	int roll2 = rand.nextInt((6 - 1) + 1) + 1;
-	int sum = roll1 + roll2;
-	
-	int roll3 = rand.nextInt((6 - 1) + 1) + 1;
-	int roll4 = rand.nextInt((6 - 1) + 1) + 1;
-	System.out.println(roll3 + "+" + roll4 + "=" + sum);
+    System.out.println("End of minuets");
     
-    String filename;
-    filename = "m" + minuets[0][0] + ".wav";
-    System.out.println(filename);
-    playFile(filename);
-    filename = "m" + minuets[sum][1] + ".wav";
-    System.out.println(filename);
-    playFile(filename);
-    filename = "m" + minuets[1][10] + ".wav";
-    System.out.println(filename);
-    playFile(filename);
-    filename = "T" + trios[0][2] + ".wav";
-    System.out.println(filename);
-    playFile(filename);
+    for (int i = 0; i < 16; i++) {
+    	int roll1 = rand.nextInt((6 - 1) + 1) + 1;
+    	String filename;
+    	System.out.println(roll1);
+        filename = "T" + trios[i][roll1 - 1] + ".wav";
+        System.out.println(filename);
+        playFile(filename);
+    }
+    
+
   }
 }
