@@ -90,8 +90,7 @@ public class MozartDice {
         System.out.println(filename);
         playFile(filename);
     }
-    
-    System.out.println("End of minuets");
+   
     
     for (int i = 0; i < 16; i++) {
     	int roll1 = rand.nextInt((6 - 1) + 1) + 1;
