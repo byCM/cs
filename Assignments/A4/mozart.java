@@ -86,8 +86,7 @@ public class MozartDice {
     	int roll2 = rand.nextInt((6 - 1) + 1) + 1;
     	int sum = roll1 + roll2;
     	
-    	String filename;
-    	filename = "m" + minuets[i][sum - 2] + ".wav";
+    	String filename = "m" + minuets[i][sum - 2] + ".wav";
         System.out.println(filename);
         playFile(filename);
     }
@@ -96,9 +95,7 @@ public class MozartDice {
     
     for (int i = 0; i < 16; i++) {
     	int roll1 = rand.nextInt((6 - 1) + 1) + 1;
-    	String filename;
-    	System.out.println(roll1);
-        filename = "T" + trios[i][roll1 - 1] + ".wav";
+        String filename = "T" + trios[i][roll1 - 1] + ".wav";
         System.out.println(filename);
         playFile(filename);
     }
