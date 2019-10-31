@@ -1,6 +1,4 @@
-//
-// Template program for Mozart Dice Program
-//
+
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.File;
