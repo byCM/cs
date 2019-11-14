@@ -1,12 +1,19 @@
 public class Note extends MidiPlayer {
+	private int note;
 	private int velocity;
-	private int value;
 	private int duration;
 	
 	public Note() {
 		this.velocity = 0;
-		this.value = 0;
+		this.note = 0;
 		this.duration = 0;
+	}
+	public void setValue(int note) {
+		this.note = note;
+	}
+	
+	public int getValue() {
+		return note;
 	}
 	
 	public void setVelocity(int velocity) {
@@ -15,14 +22,6 @@ public class Note extends MidiPlayer {
 	
 	public int getVelocity() {
 		return velocity;
-	}
-	
-	public void setValue(int value) {
-		this.value = value;
-	}
-	
-	public int getValue() {
-		return value;
 	}
 	
 	public void setDuration(int duration) {
