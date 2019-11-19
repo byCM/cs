@@ -5,16 +5,19 @@ import java.util.ArrayList;
 public class Song {
 	private String Name;
 	private ArrayList<Note> notes;
+	public Synthesizer synth;
 	
 	private static MidiChannel channels[] = null;
 	
 	public Song() {
 		Name = "None";
 		notes = new ArrayList<Note>();
+		
+		 synth = null;
 	}
 	
 	public Song(String name) {
-		name = name;
+		Name = name;
 		notes = new ArrayList<Note>();
 	}
 	
@@ -32,12 +35,67 @@ public class Song {
 		notes.add(details);
 	}
 	
+public void playSong() {
 	
+	   try {
+	      synth = MidiSystem.getSynthesizer();
+	      synth.open();
+	   }
+	   catch (MidiUnavailableException e)
+	   {
+	       System.out.println("MIDI error.");
+	       e.printStackTrace();
+	       System.exit(1);
+	   }
+	   // Array for musical instruments / channels is set to the default channels
+	   // and the default instrument is in channels[0]
+	   channels = synth.getChannels();
+	   
+	   System.out.println(this.getName());
+	   
+	   for(int i=0; i < notes.size(); i++) {
+		   playNoteWait(this.notes.get(i).getValue(), this.notes.get(i).getVelocity(), this.notes.get(i).getDuration());
+	   }
+}
+
+
+
+
+
+	
+	
+
+/*
 public static void main(String[] args) {
+	
+	Synthesizer synth = null;
+	   try {
+	      synth = MidiSystem.getSynthesizer();
+	      synth.open();
+	   }
+	   catch (MidiUnavailableException e)
+	   {
+	       System.out.println("MIDI error.");
+	       e.printStackTrace();
+	       System.exit(1);
+	   }
+	   // Array for musical instruments / channels is set to the default channels
+	   // and the default instrument is in channels[0]
+	   channels = synth.getChannels();
+	   
 	Song song1 = new Song("Twinkly little star");
 	song1.addNote(60, 127, 500);
+	song1.addNote(60, 127, 500);
+	song1.addNote(60, 127, 500);
+	song1.addNote(60, 127, 500);
+	song1.playNoteWait(song1.notes.get(0).getValue(), song1.notes.get(0).getVelocity(), song1.notes.get(0).getDuration());
+	
+	
 	
 }
+*/
+
+
 	
 	
 	
@@ -62,6 +120,22 @@ public static void playNoteWait(int note, int velocity, int duration)
    }
    //stop playing the note
    channels[0].noteOff(note);
+
+
+Synthesizer synth = null;
+try {
+   synth = MidiSystem.getSynthesizer();
+   synth.open();
+}
+catch (MidiUnavailableException e)
+{
+    System.out.println("MIDI error.");
+    e.printStackTrace();
+    System.exit(1);
+}
+// Array for musical instruments / channels is set to the default channels
+// and the default instrument is in channels[0]
+channels = synth.getChannels();
 }
 
 
