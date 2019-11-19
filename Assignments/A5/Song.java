@@ -8,8 +8,13 @@ public class Song {
 	
 	private static MidiChannel channels[] = null;
 	
-	public Song(String Name) {
+	public Song() {
 		Name = "None";
+		notes = new ArrayList<Note>();
+	}
+	
+	public Song(String name) {
+		name = name;
 		notes = new ArrayList<Note>();
 	}
 	
@@ -24,47 +29,40 @@ public class Song {
 	
 	public void addNote(int note, int velocity, int duration) {
 		Note details = new Note(note, velocity, duration);
+		notes.add(details);
 	}
 	
 	
-	public static void main(String[] args) {
-		Song notes = new Song("Song one");
-	}
+public static void main(String[] args) {
+	Song song1 = new Song("Twinkly little star");
+	song1.addNote(60, 127, 500);
 	
-	
-	
-/*	
-public class Details {	
-	int note;
-	int velocity;
-	int duration;
-
-
-	public Details(int note, int velocity, int duration) {
-		this.note = note;
-        this.velocity = velocity;
-        this.duration = duration;
-	}
 }
-*/
+	
+	
+	
+
 
 	
 	
 	
 	
-	public static void playNoteWait(int note, int velocity, int duration)
-	 {
-	    channels[0].noteOn(note, velocity);
-	    try
-	    {
-	          Thread.sleep(duration);
-	    }
-	    catch (InterruptedException e)
-	    {
-	        System.out.println("Interrupt error.");
-	    }
-	    channels[0].noteOff(note);
-	 }
+public static void playNoteWait(int note, int velocity, int duration)
+{
+   //start playing the note using instrument in slot 0
+   channels[0].noteOn(note, velocity);
+   //wait out the duration
+   try
+   {
+         Thread.sleep(duration);
+   }
+   catch (InterruptedException e)
+   {
+       System.out.println("Interrupt error.");
+   }
+   //stop playing the note
+   channels[0].noteOff(note);
+}
 
 
 	 public static void playNoteNoWait(int note, int velocity,int duration)
@@ -84,5 +82,7 @@ public class Details {
 	    Thread t = new Thread(play);
 	    t.start();
 	 }
+	 
+	 
 
 }
