@@ -4,9 +4,9 @@ public class Note extends MidiPlayer {
 	private int duration;
 	
 	public Note(int note, int velocity, int duration) {
-		this.velocity = 0;
-		this.note = 0;
-		this.duration = 0;
+		this.velocity = note;
+		this.note = velocity;
+		this.duration = duration;
 	}
 	
 	public void setValue(int note) {
