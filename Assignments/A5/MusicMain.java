@@ -26,18 +26,26 @@ public class MusicMain {
 		   
 		   	   
 		Note song[] = new Note[200];
-		song[0] = new Note(60, 127, 500);
-		song[1] = new Note(60, 127, 500);
-		song[2] = new Note(60, 127, 500);
-		song[3] = new Note(60, 127, 500);
-		song[4] = new Note(60, 127, 500);
-		song[5] = new Note(60, 127, 500);
-		song[6] = new Note(60, 127, 500);
-		song[7] = new Note(60, 127, 500);
+		song[0] = new Note(88, 127, 200); //BASE NOTE
+		song[1] = new Note(93, 127, 130);
+		song[2] = new Note(88, 127, 130);
+		song[3] = new Note(95, 127, 130);
+		song[4] = new Note(88, 127, 130);
+		song[5] = new Note(91, 127, 130);
+		song[6] = new Note(93, 127, 130);
+		song[7] = new Note(88, 127, 130);
+		song[8] = new Note(96, 127, 130);
+		song[9] = new Note(88, 127, 130);
+		song[10] = new Note(97, 127, 130);
+		song[11] = new Note(88, 127, 130);
+		song[12] = new Note(95, 127, 130);
+		song[13] = new Note(96, 127, 130);
+		
+
 		
 		Song song1 = new Song("Twinkly little star");
 		
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < 14; i++) {
 			song1.addNote(song[i].getValue(), song[i].getVelocity(), song[i].getDuration());
 		}
 		
