@@ -450,6 +450,39 @@ public class MusicMain {
 		t2.start();
 		t3.start();
 		
+		
+		Note chord[] = new Note[50];
+		Note chord2[] = new Note[50];
+		Note chord3[] = new Note[50];
+		Note chord4[] = new Note[50];
+		
+		// Piano Chord: C Major
+		chord[0] = new Note(60, 100, 500); // C
+		chord[1] = new Note(64, 100, 500); // E
+		chord[2] = new Note(67, 100, 500); // G
+		
+		// Piano Chord: D Major
+		chord2[0] = new Note(62, 100, 500); // D
+		chord2[1] = new Note(66, 100, 500); // F#
+		chord2[2] = new Note(69, 100, 500); // A
+		
+		//Piano Chord: F Major
+		chord3[0] = new Note(65, 100, 500); // F
+		chord3[1] = new Note(69, 100, 500); // A
+		chord3[2] = new Note(60, 100, 500); // C
+		
+		//Piano Chord: G Major
+		chord4[0] = new Note(67, 100, 500); // G
+		chord4[1] = new Note(71, 100, 500); // B
+		chord4[2] = new Note(62, 100, 500); // D
+		
+		Song ChordOne = new Song("C Major");
+		Song ChordTwo = new Song("D Major");
+		Song ChordThree = new Song("F Major");
+		Song ChordFour = new Song("G Major");
+		
+		
+		
 	}
 
 }
