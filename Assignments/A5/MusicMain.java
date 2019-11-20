@@ -28,9 +28,9 @@ public class MusicMain {
 		Note song[] = new Note[200];	
 		Note song2[] = new Note[200];
 		
-		song[0] = new Note(95, 127, 500);
-		song[1] = new Note(95, 100, 500);
-		song[2] = new Note(95, 70, 500);
+		song[0] = new Note(95, 40, 500);
+		song[1] = new Note(95, 40, 500);
+		song[2] = new Note(95, 40, 500);
 	
 		song[3] = new Note(87, 127, 150); //BASE NOTE
 		song[4] = new Note(92, 127, 150);
@@ -92,11 +92,26 @@ public class MusicMain {
 		song[57] = new Note(94, 127, 150);
 		song[58] = new Note(95, 127, 150);
 		
+		song[59] = new Note(87, 127, 150); //BASE NOTE
+		song[60] = new Note(92, 127, 150);
+		song[61] = new Note(87, 127, 150);
+		song[62] = new Note(94, 127, 150);
+		song[63] = new Note(87, 127, 150);
+		song[64] = new Note(90, 127, 150);
+		song[65] = new Note(92, 127, 150);
+		song[66] = new Note(87, 127, 150);
+		song[67] = new Note(95, 127, 150);
+		song[68] = new Note(87, 127, 150);
+		song[69] = new Note(97, 127, 150);
+		song[70] = new Note(87, 127, 150);
+		song[71] = new Note(94, 127, 150);
+		song[72] = new Note(95, 127, 150);
+		
 
 		//2nd Instrumental
-		song2[0] = new Note(57, 0, 500);
-		song2[1] = new Note(64, 0, 500);
-		song2[2] = new Note(65, 0, 500);
+		song2[0] = new Note(10, 0, 500);
+		song2[1] = new Note(10, 0, 500);
+		song2[2] = new Note(10, 0, 500);
 		
 		song2[3] = new Note(57, 0, 150); //BASE NOTE
 		song2[4] = new Note(62, 0, 150);
@@ -128,59 +143,74 @@ public class MusicMain {
 		song2[29] = new Note(64, 0, 150);
 		song2[30] = new Note(65, 0, 150);
 		
-		song2[31] = new Note(57, 80, 150);
-		song2[32] = new Note(62, 80, 150);
-		song2[33] = new Note(57, 80, 150);
-		song2[34] = new Note(64, 80, 150);
-		song2[35] = new Note(57, 80, 150);
-		song2[36] = new Note(60, 80, 150);
-		song2[37] = new Note(62, 80, 150);
-		song2[38] = new Note(57, 80, 150);
-		song2[39] = new Note(65, 80, 150);
-		song2[40] = new Note(57, 80, 150);
-		song2[41] = new Note(67, 80, 150);
-		song2[42] = new Note(57, 80, 150);
-		song2[43] = new Note(64, 80, 150);
-		song2[44] = new Note(65, 80, 150);
+		song2[31] = new Note(77, 80, 150);
+		song2[32] = new Note(82, 80, 150);
+		song2[33] = new Note(77, 80, 150);
+		song2[34] = new Note(84, 80, 150);
+		song2[35] = new Note(77, 80, 150);
+		song2[36] = new Note(80, 80, 150);
+		song2[37] = new Note(82, 80, 150);
+		song2[38] = new Note(77, 80, 150);
+		song2[39] = new Note(85, 80, 150);
+		song2[40] = new Note(77, 80, 150);
+		song2[41] = new Note(87, 80, 150);
+		song2[42] = new Note(77, 80, 150);
+		song2[43] = new Note(84, 80, 150);
+		song2[44] = new Note(85, 80, 150);
 		
-		song2[45] = new Note(57, 80, 150);
-		song2[46] = new Note(62, 80, 150);
-		song2[47] = new Note(57, 80, 150);
-		song2[48] = new Note(64, 80, 150);
-		song2[49] = new Note(57, 80, 150);
-		song2[50] = new Note(60, 80, 150);
-		song2[51] = new Note(62, 80, 150);
-		song2[52] = new Note(57, 80, 150);
-		song2[53] = new Note(65, 80, 150);
-		song2[54] = new Note(57, 80, 150);
-		song2[55] = new Note(67, 80, 150);
-		song2[56] = new Note(57, 80, 150);
-		song2[57] = new Note(64, 80, 150);
-		song2[58] = new Note(65, 80, 150);
+		song2[45] = new Note(77, 80, 150);
+		song2[46] = new Note(82, 80, 150);
+		song2[47] = new Note(77, 80, 150);
+		song2[48] = new Note(84, 80, 150);
+		song2[49] = new Note(77, 80, 150);
+		song2[50] = new Note(80, 80, 150);
+		song2[51] = new Note(82, 80, 150);
+		song2[52] = new Note(77, 80, 150);
+		song2[53] = new Note(85, 80, 150);
+		song2[54] = new Note(77, 80, 150);
+		song2[55] = new Note(87, 80, 150);
+		song2[56] = new Note(77, 80, 150);
+		song2[57] = new Note(84, 80, 150);
+		song2[58] = new Note(85, 80, 150);
+		
+		song2[59] = new Note(77, 80, 150);
+		song2[60] = new Note(82, 80, 150);
+		song2[61] = new Note(77, 80, 150);
+		song2[62] = new Note(84, 80, 150);
+		song2[63] = new Note(77, 80, 150);
+		song2[64] = new Note(80, 80, 150);
+		song2[65] = new Note(82, 80, 150);
+		song2[66] = new Note(77, 80, 150);
+		song2[67] = new Note(85, 80, 150);
+		song2[68] = new Note(77, 80, 150);
+		song2[69] = new Note(87, 80, 150);
+		song2[70] = new Note(77, 80, 150);
+		song2[71] = new Note(84, 80, 150);
+		song2[72] = new Note(85, 80, 150);
 		
 		
-		Song song1 = new Song("Exorcist Theme");
-		Song songtwo = new Song("Exorcist Theme 2");
+		Song songOne = new Song("Exorcist Theme");
+		Song songTwo = new Song("Exorcist Theme 2");
 		
-		for (int i = 0; i < 59; i++) {
-			song1.addNote(song[i].getValue(), song[i].getVelocity(), song[i].getDuration());
+		for (int i = 0; i < 73; i++) {
+			songOne.addNote(song[i].getValue(), song[i].getVelocity(), song[i].getDuration());
 		}
 		
-		for (int i = 0; i < 59; i++) {
-			songtwo.addNote(song2[i].getValue(), song2[i].getVelocity(), song2[i].getDuration());
+		for (int i = 0; i < 73; i++) {
+			songTwo.addNote(song2[i].getValue(), song2[i].getVelocity(), song2[i].getDuration());
 		}
 		
 
 		
 		Thread thread1 = new Thread() {
 		    public void run() {
-		    	song1.playSong();
+		    	songOne.playSong();
 		    }
 		};
 
 		Thread thread2 = new Thread() {
 		    public void run() {
-		    	songtwo.playSong();
+		    	songTwo.playSong();
 		    }
 		};	
 		
