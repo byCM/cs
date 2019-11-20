@@ -3,14 +3,15 @@ import java.util.Scanner;
 public class RussianMulti {
 
 	public static void main(String[] args) {
-		Scanner keyboard = new Scanner(System.in);
 		int a;
 		int b;
+		
+		Scanner keyboard = new Scanner(System.in);
 		
 		System.out.println("Enter the first Positive integer: ");	
 		a = keyboard.nextInt();
 		
-		while (a <=0) {
+		while (a <= 0) {
 			System.out.println(a + " is negative, please enter a positive integer! ");
 			a = keyboard.nextInt();
 		}
@@ -18,10 +19,12 @@ public class RussianMulti {
 		System.out.println("Enter the second positive integer: ");
 		b = keyboard.nextInt();
 		
-		while (b <=0) {
+		while (b <= 0) {
 			System.out.println(b + " is negative, please enter a positive integer! ");
 			b = keyboard.nextInt();
 		}
+		
+		keyboard.close();
 
 		int result = multiplication(a, b);
         System.out.println(a + " * " + b + " = " + result);
@@ -32,12 +35,13 @@ public class RussianMulti {
 			return b;
 		}
 		
-		int temp = multiplication(a / 2, b * 2);
+		int c = multiplication(a / 2, b * 2);
         if (a % 2 != 0) {
-            temp += b;
+            c += b;
         }
 
-        return temp;
+        return c;
+        
 	}
 
 }
