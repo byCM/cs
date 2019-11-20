@@ -1,6 +1,3 @@
-
-
-
 import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.MidiUnavailableException;
@@ -26,8 +23,7 @@ public class MusicMain {
 		   // Array for musical instruments / channels is set to the default channels
 		   // and the default instrument is in channels[0]
 		   channels = synth.getChannels();
-		   
-		   	   
+		    
 		Note song[] = new Note[200];	
 		Note song2[] = new Note[200];
 		Note song3[] = new Note[200];
@@ -284,24 +280,24 @@ public class MusicMain {
 		song2[114] = new Note(85, 80, 150);
 		
 		//Part 3 instrumental
-		song3[0] = new Note(10, 0, 500);
-		song3[1] = new Note(10, 0, 500);
-		song3[2] = new Note(10, 0, 500);
+		song3[0] = new Note(0, 0, 500);
+		song3[1] = new Note(0, 0, 500);
+		song3[2] = new Note(0, 0, 500);
 		
-		song3[3] = new Note(57, 0, 150); //BASE NOTE
-		song3[4] = new Note(62, 0, 150);
-		song3[5] = new Note(57, 0, 150);
-		song3[6] = new Note(64, 0, 150);
-		song3[7] = new Note(57, 0, 150);
-		song3[8] = new Note(60, 0, 150);
-		song3[9] = new Note(62, 0, 150);
-		song3[10] = new Note(57, 0, 150);
-		song3[11] = new Note(65, 0, 150);
-		song3[12] = new Note(57, 0, 150);
-		song3[13] = new Note(67, 0, 150);
-		song3[14] = new Note(57, 0, 150);
-		song3[15] = new Note(64, 0, 150);
-		song3[16] = new Note(65, 0, 150);
+		song3[3] = new Note(0, 0, 150); //BASE NOTE
+		song3[4] = new Note(0, 0, 150);
+		song3[5] = new Note(0, 0, 150);
+		song3[6] = new Note(0, 0, 150);
+		song3[7] = new Note(0, 0, 150);
+		song3[8] = new Note(0, 0, 150);
+		song3[9] = new Note(0, 0, 150);
+		song3[10] = new Note(0, 0, 150);
+		song3[11] = new Note(0, 0, 150);
+		song3[12] = new Note(0, 0, 150);
+		song3[13] = new Note(0, 0, 150);
+		song3[14] = new Note(0, 0, 150);
+		song3[15] = new Note(0, 0, 150);
+		song3[16] = new Note(0, 0, 150);
 		
 		song3[17] = new Note(57, 0, 150); //BASE NOTE
 		song3[18] = new Note(62, 0, 150);
@@ -413,6 +409,7 @@ public class MusicMain {
 		Song songTwo = new Song("Exorcist Theme Song Part #2");
 		Song songThree = new Song("Exorcist Theme song Part #3");
 		
+		
 		for (int i = 0; i < 114; i++) {
 			songOne.addNote(song[i].getValue(), song[i].getVelocity(), song[i].getDuration());
 		}
@@ -445,41 +442,65 @@ public class MusicMain {
 		    }
 		};	
 		
-
 		t1.start();
 		t2.start();
 		t3.start();
 		
-		
+		/*
+		// 4 Different Piano Chords
 		Note chord[] = new Note[50];
 		Note chord2[] = new Note[50];
 		Note chord3[] = new Note[50];
 		Note chord4[] = new Note[50];
 		
 		// Piano Chord: C Major
-		chord[0] = new Note(60, 100, 500); // C
-		chord[1] = new Note(64, 100, 500); // E
-		chord[2] = new Note(67, 100, 500); // G
+		chord[0] = new Note(60, 100, 2500); // C
+		chord[1] = new Note(64, 100, 2500); // E
+		chord[2] = new Note(67, 100, 2500); // G
 		
 		// Piano Chord: D Major
-		chord2[0] = new Note(62, 100, 500); // D
-		chord2[1] = new Note(66, 100, 500); // F#
-		chord2[2] = new Note(69, 100, 500); // A
+		chord2[0] = new Note(62, 100, 2500); // D
+		chord2[1] = new Note(66, 100, 2500); // F#
+		chord2[2] = new Note(69, 100, 2500); // A
 		
 		//Piano Chord: F Major
-		chord3[0] = new Note(65, 100, 500); // F
-		chord3[1] = new Note(69, 100, 500); // A
-		chord3[2] = new Note(60, 100, 500); // C
+		chord3[0] = new Note(65, 100, 2500); // F
+		chord3[1] = new Note(69, 100, 2500); // A
+		chord3[2] = new Note(60, 100, 2500); // C
 		
 		//Piano Chord: G Major
-		chord4[0] = new Note(67, 100, 500); // G
-		chord4[1] = new Note(71, 100, 500); // B
-		chord4[2] = new Note(62, 100, 500); // D
+		chord4[0] = new Note(67, 100, 2500); // G
+		chord4[1] = new Note(71, 100, 2500); // B
+		chord4[2] = new Note(62, 100, 2500); // D
 		
 		Song ChordOne = new Song("C Major");
 		Song ChordTwo = new Song("D Major");
 		Song ChordThree = new Song("F Major");
 		Song ChordFour = new Song("G Major");
+		
+		
+		for (int i = 0; i < 3; i++) {
+			ChordOne.addNote(chord[i].getValue(), chord[i].getVelocity(), chord[i].getDuration());
+		}
+		
+		for (int i = 0; i < 3; i++) {
+			ChordTwo.addNote(chord2[i].getValue(), chord2[i].getVelocity(), chord2[i].getDuration());
+		}
+		
+		for (int i = 0; i < 3; i++) {
+			ChordThree.addNote(chord3[i].getValue(), chord3[i].getVelocity(), chord3[i].getDuration());
+		}
+		
+		for (int i = 0; i < 3; i++) {
+			ChordFour.addNote(chord4[i].getValue(), chord4[i].getVelocity(), chord4[i].getDuration());
+		}
+		
+		ChordOne.playChord();
+		ChordTwo.playChord();
+		ChordThree.playChord();
+		ChordFour.playChord();
+		*/
+		
 		
 		
 		
