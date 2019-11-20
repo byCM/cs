@@ -1,3 +1,22 @@
+////////////////////////////////////////////////////////////////////////////
+//
+// Michael Ross
+// Assignment 5 MidiPlayer
+// 11/17/2019
+//
+////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// DESCRIPTION: Plays the Exorcist theme song. Multi-threaded and has 3 different parts. 
+// For some reason it gets off beat and lags sometimes, even though it shouldn't as it should be synchronized.  
+//
+// INPUTS: Takes note, velocity and duration inputs
+//
+// OUTPUTS: Plays the note for the duration and time that you entered.
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
@@ -191,7 +210,7 @@ public class MusicMain {
 		song2[29] = new Note(64, 0, 150);
 		song2[30] = new Note(65, 0, 150);
 		
-		song2[31] = new Note(77, 80, 150);
+		song2[31] = new Note(77, 80, 150); //BASE NOTE
 		song2[32] = new Note(82, 80, 150);
 		song2[33] = new Note(77, 80, 150);
 		song2[34] = new Note(84, 80, 150);
@@ -206,7 +225,7 @@ public class MusicMain {
 		song2[43] = new Note(84, 80, 150);
 		song2[44] = new Note(85, 80, 150);
 		
-		song2[45] = new Note(77, 80, 150);
+		song2[45] = new Note(77, 80, 150); //BASE NOTE
 		song2[46] = new Note(82, 80, 150);
 		song2[47] = new Note(77, 80, 150);
 		song2[48] = new Note(84, 80, 150);
@@ -221,7 +240,7 @@ public class MusicMain {
 		song2[57] = new Note(84, 80, 150);
 		song2[58] = new Note(85, 80, 150);
 		
-		song2[59] = new Note(77, 80, 150);
+		song2[59] = new Note(77, 80, 150); //BASE NOTE
 		song2[60] = new Note(82, 80, 150);
 		song2[61] = new Note(77, 80, 150);
 		song2[62] = new Note(84, 80, 150);
@@ -236,7 +255,7 @@ public class MusicMain {
 		song2[71] = new Note(84, 80, 150);
 		song2[72] = new Note(85, 80, 150);
 		
-		song2[73] = new Note(77, 80, 150);
+		song2[73] = new Note(77, 80, 150); //BASE NOTE
 		song2[74] = new Note(82, 80, 150);
 		song2[75] = new Note(77, 80, 150);
 		song2[76] = new Note(84, 80, 150);
@@ -251,7 +270,7 @@ public class MusicMain {
 		song2[85] = new Note(84, 80, 150);
 		song2[86] = new Note(85, 80, 150);
 		
-		song2[87] = new Note(77, 80, 150);
+		song2[87] = new Note(77, 80, 150); //BASE NOTE
 		song2[88] = new Note(82, 80, 150);
 		song2[89] = new Note(77, 80, 150);
 		song2[90] = new Note(84, 80, 150);
@@ -266,7 +285,7 @@ public class MusicMain {
 		song2[99] = new Note(84, 80, 150);
 		song2[100] = new Note(85, 80, 150);
 		
-		song2[101] = new Note(77, 80, 150);
+		song2[101] = new Note(77, 80, 150); //BASE NOTE
 		song2[102] = new Note(82, 80, 150);
 		song2[103] = new Note(77, 80, 150);
 		song2[104] = new Note(84, 80, 150);
@@ -425,28 +444,28 @@ public class MusicMain {
 		
 
 		
-		Thread thread1 = new Thread() {
+		Thread t1 = new Thread() {
 		    public void run() {
 		    	songOne.playSong();
 		    }
 		};
 
-		Thread thread2 = new Thread() {
+		Thread t2 = new Thread() {
 		    public void run() {
 		    	songTwo.playSong();
 		    }
 		};	
 		
-		Thread thread3 = new Thread() {
+		Thread t3 = new Thread() {
 		    public void run() {
 		    	songThree.playSong();
 		    }
 		};	
 		
-		thread2.start();
-		thread1.start();
 
-		thread3.start();
+		t1.start();
+		t2.start();
+		t3.start();
 		
 	}
 
