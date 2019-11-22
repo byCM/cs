@@ -1,21 +1,4 @@
-////////////////////////////////////////////////////////////////////////////
-//
-// Michael Ross
-// Assignment 5 MidiPlayer
-// 11/17/2019
-//
-////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
-// DESCRIPTION: Plays the Exorcist theme song. Multi-threaded and has 3 different parts. ** Extra credit at bottom on page line #469, remove block comments for it to run
-// For some reason it gets off beat and lags sometimes, even though it shouldn't as it should be synchronized. Doesn't even make it all the way through sometimes. Under 200 notes with silent ones.
-//
-// INPUTS: Takes note, velocity and duration inputs
-//
-// OUTPUTS: Plays the note for the duration and time that you entered.
-//
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 import javax.sound.midi.MidiChannel;
 import javax.sound.midi.MidiSystem;
