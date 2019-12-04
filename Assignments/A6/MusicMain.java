@@ -7,13 +7,13 @@ import javax.sound.midi.MidiUnavailableException;
 import javax.sound.midi.Synthesizer;
 
 public class MusicMain {
-	public Scanner x;
+	public Scanner textFile;
 	
 	private static MidiChannel channels[] = null;
 	
 	public void openFile() {
 		try { 
-			x = new Scanner(new File("song.txt"));
+			textFile = new Scanner(new File("song.txt"));
 		}
 		catch (Exception e) {
 			System.out.println("Could Not Find File");
@@ -21,13 +21,13 @@ public class MusicMain {
 	}
 	
 	public void readFile() {
-		while (x.hasNext()) {
+		while (textFile.hasNext()) {
 			
-			int temp = 50;
+			int temp = 0;
 				
-			String a = x.next();
-			int b = x.nextInt();
-			int c = x.nextInt();
+			String a = textFile.next();
+			int b = textFile.nextInt();
+			int c = textFile.nextInt();
 			
 			if (a.equals("C")) {
 				temp = 60;
@@ -55,15 +55,17 @@ public class MusicMain {
 				temp = 71;
 			}
 			
-			Note song[] = new Note[200];
+			Note song[] = new Note[100];
 			song[0] = new Note(temp, b, c);
 			
-			Song songOne = new Song("Exorcist Theme Song");
+			
+			Song songOne = new Song("Song 1");
 	    	for (int i = 0; i < 1; i++) {
 				songOne.addNote(song[i].getValue(), song[i].getVelocity(), song[i].getDuration());
 				System.out.println(song[i].getValue());
 				System.out.println(song[i].getVelocity());
 				System.out.println(song[i].getDuration());
+				
 			}
 	    	
 	    	songOne.playSong();
@@ -72,7 +74,7 @@ public class MusicMain {
 	}
 	
 	public void closeFile() {
-		x.close();
+		textFile.close();
 	}
 	
 	public static void main(String[] args) {
@@ -123,6 +125,8 @@ public class MusicMain {
     	*/
 
 
+		
+		
 		
 	}
 
