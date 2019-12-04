@@ -11,6 +11,8 @@ public class MusicMain {
 	
 	private static MidiChannel channels[] = null;
 	
+	Song songOne = new Song("Song 1");
+	
 	public void openFile() {
 		try { 
 			textFile = new Scanner(new File("song.txt"));
@@ -55,22 +57,20 @@ public class MusicMain {
 				temp = 71;
 			}
 			
-			Note song[] = new Note[100];
+			
+			
+			Note song[] = new Note[1];
+			
 			song[0] = new Note(temp, b, c);
 			
 			
-			Song songOne = new Song("Song 1");
 	    	for (int i = 0; i < 1; i++) {
 				songOne.addNote(song[i].getValue(), song[i].getVelocity(), song[i].getDuration());
-				System.out.println(song[i].getValue());
-				System.out.println(song[i].getVelocity());
-				System.out.println(song[i].getDuration());
 				
 			}
 	    	
-	    	songOne.playSong();
-	    	
 		}
+		songOne.playSong();
 	}
 	
 	public void closeFile() {
@@ -99,33 +99,7 @@ public class MusicMain {
 		   reader.openFile();
 		   reader.readFile();
 		   reader.closeFile();
-	
-		   
-		    
-		/* // Three parts of the theme  
-		   
-		Note song[] = new Note[200];	
-		
-
-		
-		//Part 1 instrumental
-		song[0] = new Note(0, 0, 200);
-		song[1] = new Note(0, 0, 200);
-		song[2] = new Note(0, 0, 200);
-		
-		
-
-		
-		
-		Song songOne = new Song("Exorcist Theme Song");
-    	for (int i = 0; i < 89; i++) {
-			songOne.addNote(song[i].getValue(), song[i].getVelocity(), song[i].getDuration());
-		}
-    	songOne.playSong();
-    	*/
-
-
-		
+			
 		
 		
 	}
