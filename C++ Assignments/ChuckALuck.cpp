@@ -38,35 +38,35 @@ int main()
 
     if (n == first & n == second & n == third) {
         total = wager * 3;
-        cout << "All three rolls matched! You won:" << total << endl;
+        cout << "All three rolls matched! You won: $" << total << endl;
     }
     else if (n != first & n == second & n == third) {
         total = wager * 2;
-        cout << "Two rolls matched! You won:" << total << endl;
+        cout << "Two rolls matched! You won: $" << total << endl;
     }
     else if (n == first & n != second & n == third) {
         total = wager * 2;
-        cout << "Two rolls matched! You won:" << total << endl;
+        cout << "Two rolls matched! You won: $" << total << endl;
     }
     else if (n == first & n == second & n != third) {
         total = wager * 2;
-        cout << "Two rolls matched! You won:" << total << endl;
+        cout << "Two rolls matched! You won: $" << total << endl;
     }
     else if (n != first & n != second & n == third) {
         total = wager * 1;
-        cout << "One roll matched! Your balance: " << total << endl;
+        cout << "One roll matched! Your balance: $" << total << endl;
     }
     else if (n == first & n != second & n != third) {
         total = wager * 1;
-        cout << "One roll matched! Your balance: " << total << endl;
+        cout << "One roll matched! Your balance: $" << total << endl;
     }
     else if (n != first & n == second & n != third) {
         total = wager * 1;
-        cout << "One roll matched! Your balance: " << total << endl;
+        cout << "One roll matched! Your balance: $" << total << endl;
     }
     else if (n != first & n != second & n != third) {
         total = total - wager;
-        cout << "No rolls matched, you lost your wager! Total Losings: " << total << endl;
+        cout << "No rolls matched, you lost your wager! Total Losings: $" << total << endl;
     }
 
    
