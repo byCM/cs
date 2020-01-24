@@ -4,12 +4,17 @@ using namespace std;
 
 int playAgain();
 
+
 int userChoice() {
     int choice;
 
     cout << "Would you like to play Again? 1 for Yes or 2 for No" << endl;
     cin >> choice;
 
+    while (choice < 0 | choice > 2) {
+        cout << "Please enter 1 for yes or 2 for no" << endl;
+        cin >> choice;
+    }
 
 
     if (choice == 1) {
@@ -22,6 +27,7 @@ int userChoice() {
     return 0;
 }
 
+
 int gameOver() {
     cout << "You lost, Game Over! You have lost your wager!" << endl;
     return 0;
@@ -29,7 +35,6 @@ int gameOver() {
 
 
 int playAgain() {
-
 
     // Wager amount
     int wager;
