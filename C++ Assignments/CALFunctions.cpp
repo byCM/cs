@@ -2,11 +2,31 @@
 #include<time.h>
 using namespace std;
 
+int playAgain();
 
-int gameOver() {
-    cout << "You have lost" << endl;
+int userChoice() {
+    int choice;
+
+    cout << "Would you like to play Again? 1 for Yes or 2 for No" << endl;
+    cin >> choice;
+
+
+
+    if (choice == 1) {
+        playAgain();
+    }
+    else {
+        cout << "Thanks for playing!" << endl;
+    }
+
     return 0;
 }
+
+int gameOver() {
+    cout << "You lost, Game Over! You have lost your wager!" << endl;
+    return 0;
+}
+
 
 int playAgain() {
 
@@ -18,8 +38,6 @@ int playAgain() {
     int n;
 
     int first, second, third, winnings = 0, total = 0;
-
-
 
     cout << "Please enter your wager:" << endl;
     cin >> wager;
@@ -45,38 +63,37 @@ int playAgain() {
     if (n == first & n == second & n == third) {
         total = wager * 3;
         cout << "All three rolls matched! You won: $" << total << endl;
-        playAgain();
+        userChoice();
     }
     else if (n != first & n == second & n == third) {
         total = wager * 2;
         cout << "Two rolls matched! You won: $" << total << endl;
-        playAgain();
+        userChoice();
     }
     else if (n == first & n != second & n == third) {
         total = wager * 2;
         cout << "Two rolls matched! You won: $" << total << endl;
-        playAgain();
-
+        userChoice();
     }
     else if (n == first & n == second & n != third) {
         total = wager * 2;
         cout << "Two rolls matched! You won: $" << total << endl;
-        playAgain();
+        userChoice();
     }
     else if (n != first & n != second & n == third) {
         total = wager * 1;
         cout << "One roll matched! Your balance: $" << total << endl;
-        playAgain();
+        userChoice();
     }
     else if (n == first & n != second & n != third) {
         total = wager * 1;
         cout << "One roll matched! Your balance: $" << total << endl;
-        playAgain();
+        userChoice();
     }
     else if (n != first & n == second & n != third) {
         total = wager * 1;
         cout << "One roll matched! Your balance: $" << total << endl;
-        playAgain();
+        userChoice();
     }
     else if (n != first & n != second & n != third) {
         total = total - wager;
@@ -84,50 +101,14 @@ int playAgain() {
         //cout << "No rolls matched, you lost your wager! Total Losings: $" << total << endl;
     }
 
-
-   
-
     return 0;
 }
 
-
-int userChoice() {
-    int choice;
-
-    cout << "Would you like to play Again? 1 for Yes or 2 for No" << endl;
-    cin >> choice;
-
-
-
-    if (choice == 1) {
-        playAgain();
-    }
-    else {
-        cout << "Thanks for playing!" << endl;
-    }
-
-    return 0;
-}
 
 int main()
 
 {
-    int choice;
-
     playAgain();
-
-    cout << "Would you like to play Again? 1 for Yes or 2 for No" << endl;
-    cin >> choice;
-
- 
-
-    if (choice == 1) {
-        playAgain();
-    }
-    else {
-        cout << "Thanks for playing!" << endl;
-    }
- 
     return 0;
 }
 
