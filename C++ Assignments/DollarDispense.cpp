@@ -2,6 +2,11 @@
 using namespace std;
 
 
+void value(int number) {
+    cout << "Total Dollars to dispense " << number << endl;
+    number = number;
+    return;
+}
 
 void hundreds(int &hundreds) {
     hundreds = hundreds / 100;
@@ -53,6 +58,7 @@ int main()
     int n5 = number;
     int n6 = number;
     int n7 = number;
+    int n8 = number;
 
 
     hundreds(number);
@@ -62,6 +68,7 @@ int main()
     fives(n5);
     twos(n6);
     ones(n7);
+    value(n8);
 
 
 
