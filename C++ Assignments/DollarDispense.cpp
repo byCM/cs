@@ -2,12 +2,6 @@
 using namespace std;
 
 
-void convert() {
-    cout << "Hello" << endl;
-    return;
-}
-
-
 
 void hundreds(int &hundreds) {
     hundreds = hundreds / 100;
@@ -27,7 +21,21 @@ void twenties(int& twenties) {
 void tens(int& tens) {
     tens = (((tens % 100) % 50) % 20) / 10;
     cout << "10 bills = " << tens << '\n';
+}
 
+void fives(int& fives) {
+    fives = ((((fives % 100) % 50) % 20) % 10) / 5;
+    cout << "$5 bills = " << fives << '\n';
+}
+
+void twos(int& twos) {
+    twos = (((((twos % 100) % 50) % 20) % 10) % 5) / 2;
+    cout << "$2 Bills = " << twos << '\n';
+}
+
+void ones(int& ones) {
+    ones = (((((ones % 100) % 50) % 20) % 10) % 5) % 1;
+    cout << "$1 Bills = " << ones << '\n';
 }
 
 
@@ -42,12 +50,19 @@ int main()
     int n2 = number;
     int n3 = number;
     int n4 = number;
+    int n5 = number;
+    int n6 = number;
+    int n7 = number;
 
 
     hundreds(number);
     fiftys(n2);
     twenties(n4);
     tens(n3);
+    fives(n5);
+    twos(n6);
+    ones(n7);
+
 
 
     
