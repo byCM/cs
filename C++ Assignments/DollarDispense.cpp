@@ -2,30 +2,31 @@
 using namespace std;
 
 
-void value(int number) {
-    cout << "Total Dollars to dispense " << number << endl;
-    number = number;
+void value(int n) {
+    cout << "Total Dollars to dispense: $" << n << endl;
+    int amount = n;
+    n = n;
     return;
 }
 
 void hundreds(int &hundreds) {
     hundreds = hundreds / 100;
-    cout << "Hundred bills = " << hundreds << '\n';
+    cout << "$100 bills = " << hundreds << '\n';
 }
 
 void fiftys(int& fiftys) {
     fiftys = (fiftys % 100) / 50;
-    cout << "50 bills = " << fiftys << '\n';
+    cout << "$50 bills = " << fiftys << '\n';
 }
 
 void twenties(int& twenties) {
     twenties = ((twenties % 100) % 50) / 20;
-    cout << "20 bills = " << twenties << '\n';
+    cout << "$20 bills = " << twenties << '\n';
 }
 
 void tens(int& tens) {
     tens = (((tens % 100) % 50) % 20) / 10;
-    cout << "10 bills = " << tens << '\n';
+    cout << "$10 bills = " << tens << '\n';
 }
 
 void fives(int& fives) {
@@ -39,38 +40,34 @@ void twos(int& twos) {
 }
 
 void ones(int& ones) {
-    ones = (((((ones % 100) % 50) % 20) % 10) % 5) % 1;
+    ones = ((((((ones % 100) % 50) % 20) % 10) % 5) % 2) / 1;
     cout << "$1 Bills = " << ones << '\n';
 }
 
 
 int main()
 {
-    int number;
-
+    int n;
 
     cout << "Please enter a integer 1-999" << endl;
-    cin >> number;
+    cin >> n;
 
-    int n2 = number;
-    int n3 = number;
-    int n4 = number;
-    int n5 = number;
-    int n6 = number;
-    int n7 = number;
-    int n8 = number;
+    int n2 = n;
+    int n3 = n;
+    int n4 = n;
+    int n5 = n;
+    int n6 = n;
+    int n7 = n;
+    int n8 = n;
 
-
-    hundreds(number);
+    value(n8);
+    hundreds(n);
     fiftys(n2);
-    twenties(n4);
-    tens(n3);
+    twenties(n3);
+    tens(n4);
     fives(n5);
     twos(n6);
     ones(n7);
-    value(n8);
-
-
 
     
     return 0;
