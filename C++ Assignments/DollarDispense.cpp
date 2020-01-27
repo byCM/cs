@@ -52,6 +52,11 @@ int main()
     cout << "Please enter a integer 1-999" << endl;
     cin >> n;
 
+    while (n < 1 | n > 999){
+        cout << "Please enter a integer 1-999" << endl;
+        cin >> n;
+    }
+
     int n2 = n;
     int n3 = n;
     int n4 = n;
