@@ -10,9 +10,6 @@ int main()
     for (int i = 0; i < 3295; i++) {
         getline(cin, s);
         cin >> size;
-        
-
-        cout << "Size: " << size << endl;
 
         switch (size) {
         case '1':
@@ -48,16 +45,15 @@ int main()
         }
     }
 
-    cout << "Total 1s: " << j << endl;
-    cout << "Total 2s: " << k << endl;
-    cout << "Total 3s: " << l << endl;
-    cout << "Total 4s: " << m << endl;
-    cout << "Total 5s: " << n << endl;
-    cout << "Total 6s: " << o << endl;
-    cout << "Total 7s: " << p << endl;
-    cout << "Total 8s: " << q << endl;
-    cout << "Total 9s: " << r << endl;
-
+    cout << "Amount of numbers that start with 1: " << j << endl;
+    cout << "Amount of numbers that start with 2: " << k << endl;
+    cout << "Amount of numbers that start with 3: " << l << endl;
+    cout << "Amount of numbers that start with 4: " << m << endl;
+    cout << "Amount of numbers that start with 5: " << n << endl;
+    cout << "Amount of numbers that start with 6: " << o << endl;
+    cout << "Amount of numbers that start with 7: " << p << endl;
+    cout << "Amount of numbers that start with 8: " << q << endl;
+    cout << "Amount of numbers that start with 9: " << r << endl;
 
 
     return 0;
