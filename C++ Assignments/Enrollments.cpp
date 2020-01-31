@@ -1,43 +1,45 @@
-=#include <iostream>
+#include <iostream>
 #include <string>
 using namespace std;
 int main()
 {
     string s;
     int j = 0, k = 0, l = 0, m = 0, n = 0, o = 0, p = 0, q = 0, r = 0, t = 0;
-    int size = 0;
+    char size;
 
     for (int i = 0; i < 3295; i++) {
         getline(cin, s);
         cin >> size;
-        size = size % 10;
+        
+
+        cout << "Size: " << size << endl;
 
         switch (size) {
-        case 1:
+        case '1':
             j++;
             break;
-        case 2:
+        case '2':
             k++;
             break;
-        case 3:
+        case '3':
             l++;
             break;
-        case 4: 
+        case '4':
             m++;
             break;
-        case 5:
+        case '5':
             n++;
             break;
-        case 6:
+        case '6':
             o++;
             break;
-        case 7:
+        case '7':
             p++;
             break;
-        case 8:
+        case '8':
             q++;
             break;
-        case 9:
+        case '9':
             r++;
             break;
         default:
