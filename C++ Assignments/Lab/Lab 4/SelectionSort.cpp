@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+void swap(int& x, int& y);
 
 
 void selectionSort(int a[], int startIndex, int endIndex)
@@ -23,16 +24,17 @@ void selectionSort(int a[], int startIndex, int endIndex)
     
     cout << "Sorted: " << *a << endl;
 
-    swap(a[1], a[10]);
-    {
-        int temp = a[1];
-        a[1] = a[10];
-        a[10] = temp;
-    }
-
+    swap(a[indexOfMin], a[startIndex]);
 
 
 }
+
+void swap(int &x, int &y){
+    int temp = x;
+    x = y;
+    y = temp;
+}
+
 
 
 int main()
