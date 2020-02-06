@@ -2,6 +2,7 @@
 using namespace std;
 
 void swap(int& x, int& y);
+void selectionSort(int a[], int startIndex, int endIndex);
 
 
 void selectionSort(int a[], int startIndex, int endIndex)
@@ -27,6 +28,7 @@ void selectionSort(int a[], int startIndex, int endIndex)
     swap(a[indexOfMin], a[startIndex]);
 
 
+    selectionSort(a, endIndex, startIndex + 1);
 }
 
 void swap(int &x, int &y){
