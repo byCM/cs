@@ -12,37 +12,34 @@ void selectionSort(int a[], int startIndex, int endIndex)
 
     int indexOfMin = startIndex;
 
-    for (int i = 0; i < startIndex - 1; i++)
+    for (int i = startIndex; i < endIndex; i++)
     {
-        int indexOfMin = startIndex;
-        for (int j = i + 1; j < startIndex; j++)
-        {
-            if (a[j] < a[indexOfMin])
-                indexOfMin = j;
+        if (a[i] < a[indexOfMin]) {
+            indexOfMin = i;
+            swap(a[indexOfMin], a[startIndex]);
         }
-        swap(a[i], a[indexOfMin]);
+        selectionSort(a, startIndex + 1, endIndex);
     }
-    
-    cout << "Sorted: " << *a << endl;
 
-    swap(a[indexOfMin], a[startIndex]);
-
-
-    selectionSort(a, endIndex, startIndex + 1);
 }
 
-void swap(int &x, int &y){
+void swap(int& x, int& y) {
     int temp = x;
     x = y;
     y = temp;
 }
 
+//int prac = i;
+//prac = a[i];
 
 
 int main()
 {
-    int a[] = {34, 4, 6, 4, 2, 4, 7, 8, 9, 3};
-    selectionSort(a, a[1], a[10]);
+    int a[] = {34, 4, 6, 4, 2, 4, 7, 8, 9, 4};
+    selectionSort(a, 0, 10);
 
-    cout << "Sorted: " << a << endl;
+    for (int i = 0; i < sizeof(a) / 4; i++) {
+        cout << "Sorted: " << a[i] << endl;
+    }
+
 }
