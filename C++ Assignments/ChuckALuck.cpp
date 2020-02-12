@@ -31,8 +31,6 @@ int playAgain() {
 }
 
 
-
-
 int main()
 {
     // Wager amount
@@ -42,8 +40,6 @@ int main()
     int n;
 
     int first, second, third, winnings = 0, total = 0;
-
-   
 
     cout << "Please enter your wager:" << endl;
     cin >> wager;
@@ -107,15 +103,10 @@ int main()
         cout << "No rolls matched, you lost your wager! Total Losings: $" << total << endl;
     }
 
- 
-
-
-
     //cout << "roll " << first << endl;
     //cout << "roll " << second << endl;
     //cout << "roll " << third << endl;
-
- 
+    
     return 0;
 }
 
