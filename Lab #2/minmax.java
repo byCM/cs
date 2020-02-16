@@ -1,31 +1,25 @@
-//minimum
+// MIN
 
 import java.util.Scanner;
 
 class Minimum {
    public static void main(String [] args) {
       Scanner scnr = new Scanner(System.in);
-      int num1;
-      int num2;
-      int minimum;
-      
+      int num1, num2, minimum;
+
       System.out.println("Please enter two integers: ");
       num1 = scnr.nextInt();
       num2 = scnr.nextInt();
       
       minimum =  Math.min(num1, num2);
-      
-      /* Add code to assign the minimum of num1 and num2 to 
-         the variable minimum 
-      */
-   
+     
       System.out.println("The minimum of " + num1 + 
                          " and " + num2 +
                          " is " + minimum);
    }
 }
 
-//maximum
+// MAX
 
 import java.util.Scanner;
 
