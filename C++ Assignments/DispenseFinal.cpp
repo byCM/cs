@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
 
-// This is with passing them each as a reference parameter. I have added my original solution which is less code and works better under this piece.
-// I am only including it to make sure this is what the instructions are asking for. 
+// Including both versions. 
 
 void value(int n, int& hundreds, int& fiftys, int& twenties, int& tens, int& fives, int& twos, int& ones) {
     cout << "Total Dollars to dispense: $" << n << endl;
