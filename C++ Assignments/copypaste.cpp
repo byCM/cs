@@ -1,4 +1,4 @@
-// Pass by Value/Reference
+// Call by Value
 
 void ChangeValues( int x );
 
@@ -21,8 +21,42 @@ OUTPUT:
 In ChangeValues: 5
 In ChangeValues: 10
 Bakc in Main: 5
+  
+  
+  
+  
+  
+// Call by reference
+  
+void ChangeValues(int &y);
+
+int main()
+{
+  int x = 5;
+  cout << "Before call, x = " << x << endl;
+  ChangeValues(x);
+  cout << "Back in main x = " << x << endl;
+  return 0;
+}
+void ChangeValues(int &y) {
+  cout << "In ChangeValues, Y = " << y << endl;
+  y = 20;
+  cout << "In ChangeValues, Y = " << y << endl;
+  return;
+}
+
+OUTPUT:
+Before call, x=5
+In ChangeValues, y = 5
+In ChangeValues, y = 20
+Back in main x = 20
 
 
+  
+  
+  
+  
+  
 //0 is false and non-0 is True
 
 if (5)
@@ -32,6 +66,9 @@ endl;
 }
 
 Output: Non-zero is True
+
+
+
 
 
 
