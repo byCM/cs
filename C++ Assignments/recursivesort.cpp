@@ -35,3 +35,36 @@ int main()
     cout << isSorted(test2, 3) << endl; // Outputs 0 for false
 
 }
+
+
+
+
+#include <iostream>
+
+#include <cstdlib>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+
+{
+
+    int multiply = 1;
+
+    // iterate over arguments
+
+    for (int i = 1; i < argc; i++)
+
+    {
+
+        // calculate multiplication of all arguments
+
+        multiply *= atoi(argv[i]);
+
+    }
+
+    cout << multiply << endl;
+
+    return 0;
+
+}
