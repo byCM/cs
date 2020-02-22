@@ -41,3 +41,53 @@ int main()
     decrypt(491);
 
 }
+
+
+
+
+
+
+#include <iostream>
+#include<time.h>
+#include <string>
+
+using namespace std;
+
+char message[] = ",vtaNm a_\"dabp!!";
+
+
+void decrypt(int key)
+{
+    if (key < 1 || key > 500) {
+        cout << "Enter a key between 1 - 500";
+        return;
+    }
+
+    int i = 0;
+
+    do {
+        int* convert = (int*)(message + i);
+        *convert = *convert - key;
+        i += 4;
+    } while (message[i] != '\0');
+
+
+    cout << message << endl;
+
+}
+
+
+int main()
+
+{
+    
+    for (int i = 0; i < 500; i++) {
+        cout << "Test Num: " << i << endl;
+    }
+
+    
+    
+
+
+
+}
