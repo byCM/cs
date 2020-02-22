@@ -289,3 +289,53 @@ Decrypted message: HI THERE
 
 Encrypted message: K am"tesving
 Decrypted message: I am testing
+
+
+
+
+
+
+
+/******************************************************************************
+*
+Program to decrypt the message
+as per the condition given in question
+
+*******************************************************************************/
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+// decrypts four bytes as per the given logic
+void decrypt( char *p, int start, int stop , int sn){
+
+// Copy the first for characters in buffer
+char buff[5] = "";
+strncpy(buff, p + start , stop - start);
+
+// convert it to number and subtract - secret number( sn )
+int num = 0;
+memcpy(&num,buff,sizeof(int));
+num -= sn;
+  
+// convert number back to string
+memcpy(buff,&num,sizeof(int));
+cout << buff;
+}
+
+int main() {
+  
+// message to de decrypted
+char message[] = ",vtaNm a_\"dabp!!";
+  
+for ( int j = 0 ; j < 500; j++ )
+{
+cout <<"Secret Key : " << j << " | Message : ";
+for ( int i = 0 ; i < strlen(message) ; i += 4 )
+{
+decrypt( message , i , i + 4 , j);
+}
+cout << endl;
+}
+  
+}
