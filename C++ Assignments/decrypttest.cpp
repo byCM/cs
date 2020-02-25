@@ -44,6 +44,12 @@ void decrypt(int key) {
 
 int main() {
 	
+	/*
+	for(int i = 0; i < 501; i ++) {
+		decrypt(i);
+	}
+	*/
+	
 	decrypt(491);
 	
 
