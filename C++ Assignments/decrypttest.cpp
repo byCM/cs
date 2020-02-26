@@ -54,8 +54,8 @@ void decrypt(int key) {
 
 	cout << message << endl;
 
-
 }
+
 
 int main() {
 
@@ -66,8 +66,5 @@ int main() {
 	*/
 
 	decrypt(491);
-
-
-
 
 }
