@@ -184,7 +184,7 @@ using namespace std;
 const int WIDTH = 20;
 const int HEIGHT = 20;
 
-// Function prototypes GIVEN
+// Function prototypes
 bool validMove(char maze[][WIDTH], bool visited[][WIDTH], int newX, int newY);
 bool move(char maze[][WIDTH], bool visited[][WIDTH], int& curX, int& curY, int newX, int newY);
 void printMaze(char maze[][WIDTH], int curx, int cury);
@@ -257,7 +257,7 @@ bool search(char maze[][WIDTH], bool visited[][WIDTH], int x, int y, int path[][
 		foundExit = search(maze, visited, x + 1, y, path);
 
 	if (foundExit) {
-		path[0][0]++;//Increase the number of steps
+		path[0][0]++;
 		path[path[0][0]][0] = x;
 		path[path[0][0]][1] = y;
 		return true;
@@ -315,7 +315,6 @@ int main() {
 
 	bool visited[HEIGHT][WIDTH];
 	// Initialize visited locations to false
-
 	for (int x = 0; x < WIDTH; x++)
 
 		for (int y = 0; y < HEIGHT; y++)
