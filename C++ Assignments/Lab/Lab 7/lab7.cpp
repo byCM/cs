@@ -13,7 +13,7 @@ int main() {
 }
 
 void addOne(int* ptrNum) {
-	*ptrNum = *ptrNum + 1;
+	*ptrNum += 1;
 }
 
 
