@@ -31,6 +31,21 @@ void locate(char maze[1][39]) {
 
 }
 
+void printMaze(char maze[][WIDTH], int curx, int cury)
+{
+	for (int y = 0; y < HEIGHT; y++)
+	{
+		for (int x = 0; x < WIDTH; x++)
+		{
+			if ((x == curx) && (y == cury))
+				cout << "@";
+			else
+				cout << maze[y][x];
+		}
+		cout << endl;
+	}
+}
+
 
 
 int main() {
@@ -51,4 +66,10 @@ int main() {
 
 	}
 
+
+	int path[1500][2];
+	path[0][0] = 0;
+
+	printMaze(maze, path[1][0], path[0][1]);
 }
+
