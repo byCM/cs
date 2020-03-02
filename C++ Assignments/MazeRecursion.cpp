@@ -9,15 +9,29 @@ const int WIDTH = 40;
 const int HEIGHT = 40;
 
 
-void locate(char maze[][WIDTH]) {
-	maze[1][1];
-	maze[8][8];
+void locate(char maze[1][39]) {
 
 	if (WIDTH <= 2 || HEIGHT <= 2) {
 		return;
 	}
 
+	//randon x across
+	srand(time(NULL));
+	int l = 0;
+	l = rand() % HEIGHT - 1;
+
+	for (int x = 0; x < WIDTH; x++) {
+		maze[l][x] = 'X'; 
+	}
+
+	// random hole in location across 
+	int q = 0;
+	q = rand();
+	maze[l][q] = ' ';
+
 }
+
+
 
 int main() {
 
@@ -38,4 +52,3 @@ int main() {
 	}
 
 }
-
