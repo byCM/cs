@@ -16,22 +16,22 @@ void locate(char maze[][WIDTH]) {
 	}
 
 	//randon x across
-	srand(time(NULL));
-	int q = rand() % WIDTH - 1;;
 
 
 	srand(time(NULL));
-	int l = rand() % HEIGHT - 1;
+	int l = rand() % HEIGHT + 1;
+	int q = rand() % WIDTH + 1;
+	int k = rand() % WIDTH + 1;
 
-	for (int x = 0; x < WIDTH; x++) {
+	for (int x = 0; x < HEIGHT + 1; x++) {
 		maze[l][x] = 'X';
 		maze[l][q] = ' ';
 	}
 
+	for (int x = 0; x < l; x++) {
+		maze[x][k] = 'X';
+	}
 
-
-	// random hole in location across 
-	//maze[l][q] = ' ';
 
 
 }
