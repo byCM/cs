@@ -19,18 +19,21 @@ void locate(char maze[][WIDTH]) {
 
 
 	srand(time(NULL));
-	int l = rand() % HEIGHT + 1;
-	int q = rand() % WIDTH + 1;
-	int k = rand() % WIDTH + 1;
+	//MAIN RANDOM LINE DOWN SIDE
+	int l = rand() % HEIGHT - 2;
+	int q = rand() % WIDTH - 2;
+	int k = rand() % WIDTH - 2;
 
-	for (int x = 0; x < HEIGHT + 1; x++) {
+	for (int x = 0; x < HEIGHT - 1; x++) {
 		maze[l][x] = 'X';
 		maze[l][q] = ' ';
 	}
 
 	for (int x = 0; x < l; x++) {
-		maze[x][k] = 'X';
+		maze[x][l] = 'X';
 	}
+
+
 
 
 
