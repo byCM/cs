@@ -17,23 +17,25 @@ void locate(char maze[][WIDTH]) {
 
 	//randon x across
 	srand(time(NULL));
-	int l = 0;
-	l = rand() % HEIGHT - 1;
+	int q = rand() % WIDTH - 1;;
+
+
+	srand(time(NULL));
+	int l = rand() % HEIGHT - 1;
 
 	for (int x = 0; x < WIDTH; x++) {
-		maze[l][x] = 'X'; 
-		cout << maze[l][x];
+		maze[l][x] = 'X';
+		maze[l][q] = ' ';
 	}
 
+
+
 	// random hole in location across 
-	int q = 0;
-	q = rand();
 	//maze[l][q] = ' ';
 
 
-
-
 }
+
 
 void printMaze(char maze[][WIDTH])
 {
@@ -43,7 +45,7 @@ void printMaze(char maze[][WIDTH])
 	{
 		for (int x = 0; x < WIDTH; x++)
 		{
-				cout << maze[y][x];
+			cout << maze[y][x];
 		}
 		cout << endl;
 	}
@@ -75,4 +77,3 @@ int main() {
 
 	printMaze(maze);
 }
-
