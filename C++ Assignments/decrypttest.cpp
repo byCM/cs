@@ -10,7 +10,6 @@ void decrypt(int key) {
 	// This includes both ways to solve this, one being very lengthy and the other being very simple using pointers. 
 
 
-
 	int one = (int(message[3]) << 24) | (int(message[2]) << 16) | (int(message[1]) << 8) | (int(message[0]));
 	int two = (int(message[7]) << 24) | (int(message[6]) << 16) | (int(message[5]) << 8) | (int(message[4]));
 	int three = (int(message[11]) << 24) | (int(message[10]) << 16) | (int(message[9]) << 8) | (int(message[8]));
