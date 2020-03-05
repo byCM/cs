@@ -18,29 +18,41 @@ void locate(char maze[][WIDTH], int upperLeft, int upperRight, int bottomLeft, i
 	int q = rand() % (WIDTH - 1) + 1;
 	//RANDOM LOCATION IN HEIGHT
 	int k = rand() % (HEIGHT - 1) + 1;
+	int m = rand() % (HEIGHT - 1) + 1;
 
 	if (WIDTH <= 2 || HEIGHT <= 2) {
 		return;
 	}
-	else {
 
+	for (int x = 1; x < 39; x++) {
+		maze[l][x] = 'X';
+		maze[l][q] = ' ';
+	}
 
+	if ((HEIGHT - l) > 4) {
 		for (int x = 1; x < 39; x++) {
-			maze[l][x] = 'X';
-			maze[l][q] = ' ';
+			maze[m][x] = 'X';
+			maze[m][q] = ' ';
 		}
+	}
+
+	//Vertical line top to l
+	for (int x = 0; x < l; x++) {
+		maze[x][k] = 'X';
+	}
 
 
-		for (int x = l; x < HEIGHT; x++) {
-			maze[x][l] = 'X';
-			if (maze[x][l - 1] == 'X') {
-				maze[38][l] = ' ';
-			}
-			if (maze[x][l] == ' ') {
-				maze[l + 1][l] = ' ';
-			}
+	for (int x = l; x < HEIGHT; x++) {
+		maze[x][l] = 'X';
+		if (maze[x][l - 1] == 'X') {
+			maze[38][l] = ' ';
 		}
-	} return;
+		if (maze[x][l] == ' ') {
+			maze[l + 1][l] = ' ';
+		}
+	}
+
+
 	
 	/*
 	for (int x = 1; x < 39; x++) {
@@ -117,4 +129,3 @@ int main() {
 
 	printMaze(maze);
 }
-
