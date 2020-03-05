@@ -8,6 +8,13 @@ using namespace std;
 const int WIDTH = 40;
 const int HEIGHT = 40;
 
+
+int randomNum(int random) {
+	srand(time(NULL));
+	random = rand() % 35;
+	return random;
+}
+
 //1 and 39
 void locate(char maze[][WIDTH], int upperLeft, int upperRight, int bottomLeft, int bottomRight) {
 
@@ -19,26 +26,44 @@ void locate(char maze[][WIDTH], int upperLeft, int upperRight, int bottomLeft, i
 	//RANDOM LOCATION IN HEIGHT
 	int k = rand() % (HEIGHT - 1) + 1;
 	int m = rand() % (HEIGHT - 1) + 1;
+	int h = rand() % (HEIGHT - 1) + 1;
+	int a = rand() % (HEIGHT - 1) + 1;
+
 
 	if (WIDTH <= 2 || HEIGHT <= 2) {
 		return;
 	}
+
+	if (maze[WIDTH + 1][HEIGHT + 1] == 'X') {
+
+	}
+	
 
 	for (int x = 1; x < 39; x++) {
 		maze[l][x] = 'X';
 		maze[l][q] = ' ';
 	}
 
-	if ((HEIGHT - l) > 4) {
+	if ((HEIGHT - l) > 5) {
 		for (int x = 1; x < 39; x++) {
 			maze[m][x] = 'X';
 			maze[m][q] = ' ';
 		}
 	}
 
-	//Vertical line top to l
+		//Vertical line top to l
 	for (int x = 0; x < l; x++) {
 		maze[x][k] = 'X';
+	}
+
+	for (int x = 0; x < l; x++) {
+		maze[x][h] = 'X';
+	}
+
+	for (int x = 0; x < 5; x++) {
+		for (int x = 0; x < l; x++) {
+			maze[x][a] = 'X';
+		}
 	}
 
 
@@ -87,6 +112,7 @@ void locate(char maze[][WIDTH], int upperLeft, int upperRight, int bottomLeft, i
 
 
 }
+
 
 
 void printMaze(char maze[][WIDTH])
