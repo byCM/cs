@@ -45,13 +45,27 @@ void locate(char maze[][WIDTH], int upperLeft, int upperRight, int bottomLeft, i
 		maze[3][8] = ' ';
 	}
 
-	for (int x = 3; x < HEIGHT; x++) {
-		maze[x][3] = 'X';
+	for (int x = 4; x < HEIGHT; x++) {
+		maze[x][8] = 'X';
 		if (maze[3][8] == ' ') {
-			maze[4][3] = ' ';
+			maze[4][8] = ' ';
 		}
+		if (maze[39][8] == 'X') {
+			maze[38][8] = ' ';
+		}
+		
 	}
 
+	for (int x = 4; x < HEIGHT; x++) {
+		maze[x][15] = 'X';
+		if (maze[3][8] == ' ') {
+			maze[4][8] = ' ';
+		}
+		if (maze[39][15] == 'X') {
+			maze[38][15] = ' ';
+		}
+
+	}
 
 
 
