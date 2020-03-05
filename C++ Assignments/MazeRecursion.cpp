@@ -11,10 +11,6 @@ const int HEIGHT = 40;
 //1 and 39
 void locate(char maze[][WIDTH], int upperLeft, int upperRight, int bottomLeft, int bottomRight) {
 
-	if (WIDTH <= 2 || HEIGHT <= 2) {
-		return;
-	}
-
 	srand(time(NULL));
 	//MAIN LOCATION DOWN SIDE
 	int l = rand() % (39) + 1;
@@ -23,23 +19,30 @@ void locate(char maze[][WIDTH], int upperLeft, int upperRight, int bottomLeft, i
 	//RANDOM LOCATION IN HEIGHT
 	int k = rand() % (HEIGHT - 1) + 1;
 
-	if (maze[10][3] = ' ') {
-		maze[10][3] = 'H';
+	if (WIDTH <= 2 || HEIGHT <= 2) {
+		return;
 	}
+	else {
 
-	/*
-	for (int x = 1; x < 39; x++) {
-		maze[l][x] = 'X';
-		maze[l][q] = ' ';
-	}
+
+		for (int x = 1; x < 39; x++) {
+			maze[l][x] = 'X';
+			maze[l][q] = ' ';
+		}
+
+
+		for (int x = l; x < HEIGHT; x++) {
+			maze[x][l] = 'X';
+			if (maze[x][l - 1] == 'X') {
+				maze[38][l] = ' ';
+			}
+			if (maze[x][l] == ' ') {
+				maze[l + 1][l] = ' ';
+			}
+		}
+	} return;
 	
-
-	for (int x = l; x < HEIGHT; x++) {
-		maze[x][l] = 'X';
-		maze[k][l] = ' ';	
-	}
-	*/
-
+	/*
 	for (int x = 1; x < 39; x++) {
 		maze[3][x] = 'X';
 		maze[3][8] = ' ';
@@ -66,7 +69,7 @@ void locate(char maze[][WIDTH], int upperLeft, int upperRight, int bottomLeft, i
 		}
 
 	}
-
+	*/
 
 
 
