@@ -174,7 +174,6 @@ int main() {
 
 
 
-
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
@@ -184,10 +183,13 @@ using namespace std;
 const int WIDTH = 20;
 const int HEIGHT = 20;
 
+//It will find the exit but takes a while.
+
 // Function prototypes
-bool validMove(char maze[][WIDTH], bool visited[][WIDTH], int newX, int newY);
-bool move(char maze[][WIDTH], bool visited[][WIDTH], int& curX, int& curY, int newX, int newY);
 void printMaze(char maze[][WIDTH], int curx, int cury);
+bool validMove(char maze[][WIDTH], bool visited[][WIDTH], int newX, int newY);
+bool search(char maze[][WIDTH], bool visited[][WIDTH], int x, int y, int path[][2]);
+bool location(char maze[][WIDTH], bool visited[][WIDTH], int& curX, int& curY, int newX, int newY);
 
 // Return true or false if moving to the specified coordinate is valid
 // Return false if we have been to this cell already GIVEN
@@ -210,13 +212,17 @@ bool validMove(char maze[][WIDTH], bool visited[][WIDTH], int newX, int newY)
 }
 
 
-bool move(char maze[][WIDTH], bool visited[][WIDTH], int& curX, int& curY, int newX, int newY)
+bool location(char maze[][WIDTH], bool visited[][WIDTH], int& curX, int& curY, int newX, int newY)
 {
+	//Sets foundExit to false if found will return true and exit
 	bool foundExit = false;
-	if (maze[newY][newX] == 'E') 
+
+	if (maze[newY][newX] == 'E')
 		foundExit = true;
+
 	curX = newX;
 	curY = newY;
+
 	visited[curY][curX] = true;
 
 	return foundExit;
@@ -271,10 +277,29 @@ int main() {
 	int x = 0;
 	int y = 0;
 
-	//Make the maze with the new dimesions 20/20
+	// 20 by 20
 	for (x = 0; x < WIDTH; x++)
 		for (y = 0; y < HEIGHT; y++)
 			maze[x][y] = ' ';
+
+	/*
+	char maze[HEIGHT][WIDTH] = {
+		   {'X','X','X','X','X','X','X','X','X','X'},
+		   {'X',' ',' ',' ',' ',' ','X',' ',' ','X'},
+		   {'X',' ','X',' ',' ',' ','X',' ',' ','X'},
+		   {'X',' ','X','X','X',' ','X',' ',' ','X'},
+		   {'X',' ',' ',' ','X',' ','X',' ',' ','X'},
+		   {'X',' ',' ',' ','X',' ',' ',' ','X','X'},
+		   {'X',' ','X','X','X',' ',' ',' ',' ','X'},
+		   {'X',' ','X',' ',' ',' ','X',' ',' ','X'},
+		   {'X',' ',' ',' ',' ',' ','X',' ','E','X'},
+		   {'X','X','X','X','X','X','X','X','X','X'}
+	};
+	bool visited[HEIGHT][WIDTH];
+
+	int x = 1, y = 1;
+	bool foundExit = false;
+	*/
 
 	for (x = 0; x < WIDTH; x++) {
 		maze[0][x] = 'X';
@@ -284,36 +309,44 @@ int main() {
 
 	}
 
-	//Fills in 25% of the maze. 
+
 	srand(time(NULL));
+
 	int j = 0;
-	for (j = 0; j <= 1 + ((WIDTH - 2) * (HEIGHT - 2) / 4); j++) {
+
+	for (j = 0; j <= 1 + (324 / 4); j++) {
 		x = rand() % HEIGHT;
 		y = rand() % WIDTH;
+
 		if (maze[x][y] == ' ')
 		{
 			maze[x][y] = 'X';
 			j++;
 		}
-
 	}
 
-	//Generate the start and the exit
-	x = 0; y = 0;
-	while (maze[x][y] != ' ') {
+	x = 1; y = 1;
+
+	do {
 		x = rand() % HEIGHT;
 		y = rand() % WIDTH;
-	}
+	} while (maze[x][y] != ' ');
+
+	srand(time(NULL));
+	int m = rand() % HEIGHT - 2;
+	int n = rand() % WIDTH - 2;
+
 	maze[x][y] = 'E';
 	x = 0; y = 0;
 
-	while (maze[x][y] != ' ') {
+	do {
 		x = rand() % HEIGHT;
 		y = rand() % WIDTH;
-	}
+	} while (maze[x][y] != ' ');
 
 
 	bool visited[HEIGHT][WIDTH];
+
 	// Initialize visited locations to false
 	for (int x = 0; x < WIDTH; x++)
 
@@ -322,6 +355,18 @@ int main() {
 			visited[y][x] = false;
 
 	visited[y][x] = true;
+
+
+	if (visited[y][x]) {
+
+	}
+
+	/*
+	int path[300][2];
+	path[0][0] = 0;
+
+	cout << path[0][0] << endl;
+	*/
 
 	int path[1500][2];
 	path[0][0] = 0;
