@@ -187,8 +187,6 @@ int main() {
 	int direction[1500][2];
 	direction[0][0] = 0;
 
-	bool foundExit = search(maze, visited, x, y, direction);
-	
 	/*
 
 	int direction[300][2];
@@ -197,10 +195,12 @@ int main() {
 	cout << direction[0][0] << endl;
 	*/
 
+	bool mazeSolved = search(maze, visited, x, y, direction);
 
 	for (int i = direction[0][0]; i > 0; i--) {
 		printMaze(maze, direction[1][0], direction[i][1]);
 	}
 
-	cout << foundExit << endl;
+
+	cout << mazeSolved << endl;
 }
