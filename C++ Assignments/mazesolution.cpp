@@ -136,16 +136,14 @@ int main() {
 
 	srand(time(NULL));
 
-	int j = 0;
-
-	for (j = 0; j <= 1 + (324 / 4); j++) {
+	for (int k = 0; k <= 1 + (324 / 4); k++) {
 		x = rand() % HEIGHT;
 		y = rand() % WIDTH;
 
 		if (maze[x][y] == ' ')
 		{
 			maze[x][y] = 'X';
-			j++;
+			k++;
 		}
 	}
 
@@ -159,6 +157,7 @@ int main() {
 	srand(time(NULL));
 	int m = rand() % HEIGHT - 2;
 	int n = rand() % WIDTH - 2;
+	int j = rand() % WIDTH;
 
 	maze[x][y] = 'E';
 	x = 0; y = 0;
@@ -181,21 +180,23 @@ int main() {
 	visited[y][x] = true;
 
 
-	if (visited[y][x]) {
+	if (visited[y][x] != -1) {
 
 	}
+
+	int direction[1500][2];
+	direction[0][0] = 0;
+
+	bool foundExit = search(maze, visited, x, y, direction);
 	
 	/*
+
 	int direction[300][2];
 	direction[0][0] = 0;
 
 	cout << direction[0][0] << endl;
 	*/
 
-	int direction[1500][2];
-	direction[0][0] = 0;
-
-	bool foundExit = search(maze, visited, x, y, direction);
 
 	for (int i = direction[0][0]; i > 0; i--) {
 		printMaze(maze, direction[1][0], direction[i][1]);
