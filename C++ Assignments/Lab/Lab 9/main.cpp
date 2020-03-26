@@ -66,14 +66,14 @@ void display()
 {
 	// Clear the screen
 	glClear(GL_COLOR_BUFFER_BIT);
-	printText(WIDTH/5, HEIGHT/4, "This demonstrates some simple 2D drawings");
+	//printText(WIDTH/5, HEIGHT/4, "This demonstrates some simple 2D drawings");
 
 	// Draw some points
 	glBegin(GL_POINTS);
 	// Change color to green  (r,g,b) where r,g,b is 0-1
 	glColor3f(0, 1, 0);
 	glVertex2f(100, 100);
-	glColor3f(1, 1, 1);  // Color to white
+	glColor3f(0, 0, 1);  // Color to Blue
 	glVertex2f(10, 20);
 	glEnd();
 
@@ -85,21 +85,30 @@ void display()
 
 	// Draw a rectangle given the four corners
 	glBegin(GL_QUADS);  // Use GL_LINE_LOOP for hollow
-	glVertex2f(200, 10); // x1,y1
-	glVertex2f(300, 10); // x2, y1
-	glVertex2f(300, 50); // x2, y2
-	glVertex2f(200, 50); // x1, y2
+	glVertex2f(0, 200); // x1,y1
+	glVertex2f(200, 200); // x2, y1
+	glVertex2f(200, 0); // x2, y2
+	glVertex2f(0, 0); // x1, y2
 	glEnd();
 
 	// Draws a polygon given the coordinates
-	glBegin(GL_POLYGON);
-	glColor3f(1, 0, 0); // Change to red
-	glVertex2f(410, 10);
-	glVertex2f(510, 210);
-	glVertex2f(410, 210);
-	glVertex2f(401, 100);
-	glVertex2f(410, 50);
+	glBegin(GL_TRIANGLES);
+	glColor3f(1, 1.5, 0); // Change to red
+	glVertex2f(100, 20);
+	glVertex2f(0, 200);
+	glVertex2f(200, 200);
 	glEnd();
+
+	/*
+	glBegin(GL_TRIANGLES);
+	glColor3f(0, 1, 0); // Change to red
+	glVertex2f(50, 10);
+	glVertex2f(0, 200);
+	glVertex2f(100, 200);
+	glVertex2f(100, 200);
+	glVertex2f(50, 10);
+	glEnd();
+	*/
 
 	glutSwapBuffers();
 	glFlush();
