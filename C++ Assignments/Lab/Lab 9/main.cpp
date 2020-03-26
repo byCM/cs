@@ -94,8 +94,8 @@ void display()
 	// Draws a polygon given the coordinates
 	glBegin(GL_TRIANGLES);
 	glColor3f(1, 1.5, 0); // Change to red
-	glVertex2f(100, 20);
-	glVertex2f(0, 200);
+	glVertex2f(100, 30);
+	glVertex2f(5, 200);
 	glVertex2f(200, 200);
 	glEnd();
 
