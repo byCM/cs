@@ -3,6 +3,9 @@
 #include <cstdlib>
 //for exit()
 using namespace std;
+
+
+
 class PostalCode {
 public:
     PostalCode(int zip);
@@ -21,8 +24,13 @@ private:
     int calculateZipCode();
     string getFiveDigitValues();
 };
+
+
+
 PostalCode::PostalCode(int zip) : zipCode(zip) {}
 PostalCode::PostalCode(string bar) : barCode(bar) {}
+
+
 
 int PostalCode::getZipCode() {
     if (checkBarCode()) {
@@ -41,11 +49,16 @@ int PostalCode::getZipCode() {
     return zipCode;
 }
 
+
+
 string PostalCode::getBarCode() {
     barCode = getFiveDigitValues();
     barCode = "1" + barCode + "1";
     return barCode;
 }
+
+
+
 bool PostalCode::checkBarCode() {
     bool result;
     if ((barCode.length() == 27) && ((static_cast<int>(barCode[0]) - 48) == 1)
@@ -55,6 +68,9 @@ bool PostalCode::checkBarCode() {
     else { result = false; }
     return result;
 }
+
+
+
 bool PostalCode::checkTwoOnes() {
     bool fiveCases[5];
 
@@ -83,6 +99,9 @@ bool PostalCode::checkTwoOnes() {
     }
     return result;
 }
+
+
+
 int PostalCode::calculateZipCode() {
     int result = 0;
     int sumArr[5];
@@ -131,6 +150,9 @@ int PostalCode::calculateZipCode() {
     }
     return result;
 }
+
+
+
 string PostalCode::getFiveDigitValues() {
     string result = "";
     int divisor = 10000;
@@ -178,6 +200,9 @@ string PostalCode::getFiveDigitValues() {
     }
     return result;
 }
+
+
+
 int main() {
     PostalCode pc("110100101000101011000010011");
     cout << "The ZIP code is: " << pc.getZipCode();
