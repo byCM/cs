@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-//for exit()
+
 using namespace std;
 
 
