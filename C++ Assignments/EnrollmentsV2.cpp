@@ -1,76 +1,70 @@
-
-#include <iostream>
-#include <string>
 #include <iostream>
 #include <fstream>
+#include <string>
 
 using namespace std;
-
 
 int main()
 {
     string s;
+
     int j = 0, k = 0, l = 0, m = 0, n = 0, o = 0, p = 0, q = 0, r = 0, t = 0;
     char size;
-    int value;
+
 
     ifstream myfile;
-    myfile.open("enrollments.txt");
 
-    if (myfile.is_open()) {
-        for (int i = 0; i < 3295; i++) {
-            getline(cin, s);
-            cin >> size;
+    myfile.open("numbers.txt");
 
+    while (!myfile.eof()) {
+        getline(cin, s);
+        cin >> size;
 
-            switch (size) {
-            case '1':
-                j++;
-                break;
-            case '2':
-                k++;
-                break;
-            case '3':
-                l++;
-                break;
-            case '4':
-                m++;
-                break;
-            case '5':
-                n++;
-                break;
-            case '6':
-                o++;
-                break;
-            case '7':
-                p++;
-                break;
-            case '8':
-                q++;
-                break;
-            case '9':
-                r++;
-                break;
-            default:
-                t++;
-                break;
-            }
+        switch (size) {
+        case '1':
+            j++;
+            break;
+        case '2':
+            k++;
+            break;
+        case '3':
+            l++;
+            break;
+        case '4':
+            m++;
+            break;
+        case '5':
+            n++;
+            break;
+        case '6':
+            o++;
+            break;
+        case '7':
+            p++;
+            break;
+        case '8':
+            q++;
+            break;
+        case '9':
+            r++;
+            break;
+        default:
+            t++;
+            break;
+
         }
     }
-
-
-    myfile.close();
-
-    cout << "Amount of numbers that start with 1: " << j << endl;
-    cout << "Amount of numbers that start with 2: " << k << endl;
-    cout << "Amount of numbers that start with 3: " << l << endl;
-    cout << "Amount of numbers that start with 4: " << m << endl;
-    cout << "Amount of numbers that start with 5: " << n << endl;
-    cout << "Amount of numbers that start with 6: " << o << endl;
-    cout << "Amount of numbers that start with 7: " << p << endl;
-    cout << "Amount of numbers that start with 8: " << q << endl;
-    cout << "Amount of numbers that start with 9: " << r << endl;
-
-
-    return 0;
+ 
 }
+
+
+
+
+    
+
+
+    
+
+   
+
+
