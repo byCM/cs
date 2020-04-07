@@ -1,26 +1,27 @@
+
 #include <iostream>
 #include <string>
-
 #include <iostream>
 #include <fstream>
 
 using namespace std;
+
+
 int main()
 {
     string s;
     int j = 0, k = 0, l = 0, m = 0, n = 0, o = 0, p = 0, q = 0, r = 0, t = 0;
     char size;
+    int value;
 
-    ofstream myfile;
-    myfile.open("test.txt");
+    ifstream myfile;
+    myfile.open("enrollments.txt");
 
-    if (myfile.fail()) {
-        cout << "Error opening file" << endl;
-        exit(1);
-    }
+    if (myfile.is_open()) {
+        for (int i = 0; i < 3295; i++) {
+            getline(cin, s);
+            cin >> size;
 
-    while (myfile.is_open()) {
-            
 
             switch (size) {
             case '1':
@@ -54,7 +55,11 @@ int main()
                 t++;
                 break;
             }
+        }
     }
+
+
+    myfile.close();
 
     cout << "Amount of numbers that start with 1: " << j << endl;
     cout << "Amount of numbers that start with 2: " << k << endl;
