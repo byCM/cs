@@ -52,13 +52,15 @@ int main()
                 break;
             
 
-            cout << "ITS OPEN" << endl;
-        }
+            }
         }
     }
     else {
         cout << "File was not found!" << endl;
     }
+
+    myfile.close();
+
 
     cout << "Amount of numbers that start with 1: " << j << endl;
     cout << "Amount of numbers that start with 2: " << k << endl;
@@ -70,9 +72,7 @@ int main()
     cout << "Amount of numbers that start with 8: " << q << endl;
     cout << "Amount of numbers that start with 9: " << r << endl;
 
-    myfile.close();
  
     return 0;
-
 
 }
