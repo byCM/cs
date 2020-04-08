@@ -13,7 +13,7 @@ int main()
 
     ifstream myfile;
 
-    myfile.open("numbers.txt");
+    myfile.open("enrollments.txt");
 
     if (myfile.is_open()) {
         while (getline(myfile, s)) {
@@ -57,7 +57,7 @@ int main()
         }
     }
     else {
-        cout << "File not found" << endl;
+        cout << "File was not found!" << endl;
     }
 
     cout << "Amount of numbers that start with 1: " << j << endl;
