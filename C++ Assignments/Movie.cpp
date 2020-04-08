@@ -1,6 +1,9 @@
 #include <iostream>
 #include <iomanip>
+
 using namespace std;
+
+
 class Movie
 {
 private:
@@ -38,16 +41,15 @@ int main() {
     movies[5] = Movie("The Incredibles 2", "G");
 
     sortByName(movies, 6);
-    //display sorted data
-    cout << "Movies sorted by name are " << endl;
+    cout << "Movies sorted by name: " << endl;
     for (int i = 0; i < 6; i++) {
         cout << left << setw(25) << movies[i].getName() << setw(10) << movies[i].getRating() << endl;
     }
     return 0;
 }
 
+//Sorts the movies by name using Bubble sort instead of selection
 void sortByName(Movie movies[], int n) {
-    //bubble sort
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
             if (movies[j].getName() > movies[j + 1].getName()) {
