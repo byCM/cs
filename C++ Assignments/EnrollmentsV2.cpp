@@ -9,15 +9,15 @@ int main()
     string s;
 
     int j = 0, k = 0, l = 0, m = 0, n = 0, o = 0, p = 0, q = 0, r = 0, t = 0;
-    char size;
+    char size = 0;
 
     ifstream myfile;
 
     myfile.open("numbers.txt");
 
     if (myfile.is_open()) {
-        while (getline(cin, s)) {
-            cin >> size;
+        while (getline(myfile, s)) {
+            size = s[0];
 
             switch (size) {
             case '1':
@@ -50,15 +50,29 @@ int main()
             default:
                 t++;
                 break;
+            
 
-            }
+            cout << "ITS OPEN" << endl;
         }
-        myfile.close();
+        }
     }
     else {
-        cout << "numbers.txt does not exists!" << endl;
+        cout << "File not found" << endl;
     }
+
+    cout << "Amount of numbers that start with 1: " << j << endl;
+    cout << "Amount of numbers that start with 2: " << k << endl;
+    cout << "Amount of numbers that start with 3: " << l << endl;
+    cout << "Amount of numbers that start with 4: " << m << endl;
+    cout << "Amount of numbers that start with 5: " << n << endl;
+    cout << "Amount of numbers that start with 6: " << o << endl;
+    cout << "Amount of numbers that start with 7: " << p << endl;
+    cout << "Amount of numbers that start with 8: " << q << endl;
+    cout << "Amount of numbers that start with 9: " << r << endl;
+
+    myfile.close();
+ 
     return 0;
-    
+
 
 }
