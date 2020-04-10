@@ -7,7 +7,6 @@ using namespace std;
 int main()
 {
     string s;
-
     int j = 0, k = 0, l = 0, m = 0, n = 0, o = 0, p = 0, q = 0, r = 0, t = 0;
     char size = 0;
 
@@ -74,5 +73,6 @@ int main()
 
  
     return 0;
+
 
 }
