@@ -2,7 +2,6 @@
 using namespace std;
 
 
-
 class ArrayOutOfRange : exception {
     int index; 
 public:
@@ -14,12 +13,10 @@ public:
         return "Array Index Out Of Range Exception";
     }
 
-
     void displayCause() {
         cout << "Array Index Out Of Range Exception for index: " << index << endl;
     }
 };
-
 
 template <typename T>
 
@@ -77,12 +74,12 @@ T& CheckedArray<T>::operator[](int index) throw(ArrayOutOfRange) {
 int main() {
 
     CheckedArray<int> array(20);
-    cout << "Accessing index 5. This should not cause any exception" << endl;
+    cout << "Accessing index 5, Shouln't Cause Exception" << endl;
     int i = array[5];
     cout << "No exception is occurred" << endl;
 
 
-    cout << "Accessing index 25. This should cause an exception" << endl;
+    cout << "Accessing index 25, Should Cause Exception" << endl;
     try {
         i = array[25];
         cout << "No exception is occurred" << endl;
@@ -90,7 +87,6 @@ int main() {
     catch (ArrayOutOfRange ex) {
         ex.displayCause();
     }
-
 
     return 0;
 
