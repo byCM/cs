@@ -7,9 +7,8 @@ using namespace std;
 
 int main()
 {
-    int numberOfRatings;
-    int movieRating;
-    string nameOfMovie;
+    int numberOfRatings, movieRating, numberOfReviews;
+    string nameOfMovie, ratings;
 
     map<int, int> mapMovie; //maps movie rating to total amount of specific movie ratings
     map<string, map<int, int> > mapReviews; 
