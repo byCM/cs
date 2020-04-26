@@ -1,48 +1,56 @@
 #include <iostream>
-#include <iomanip>
-#include <cstdlib>
+#include <map>
 #include <fstream>
 #include <string>
-#include <map>
-
+#include <iomanip>
 using namespace std;
 
-int main() {
-    cout << setprecision(1) << fixed;
-    string line, movie;
+int main()
+{
+    int numberOfRatings;
+    int movieRating;
+    string nameOfMovie;
 
+    map<int, int> mapMovie; //maps movie rating to total amount of specific movie ratings
+    map<string, map<int, int> > mapReviews; 
 
-    ifstream myfile("movies.txt");
+    ifstream myFile; 
+    myFile.open("movies.txt"); 
 
-    map<string, map<string, int> > ratings;
+    myFile >> numberOfRatings; 
+    myFile.ignore();
 
-
-    if (myfile.is_open()) {
-        getline(myfile, line);
-        int numReviews = atoi(line.c_str());
-        for (int i = 0; i < numReviews; ++i) {
-            getline(myfile, movie);
-            getline(myfile, line);
-            int rating = atoi(line.c_str());
-            if (ratings.find(movie) != ratings.end()) {
-                ratings[movie]["numReviews"]++;
-                ratings[movie]["totalRatings"] += rating;
-            }
-            else {
-                ratings[movie]["numReviews"] = 1;
-                ratings[movie]["totalRatings"] = rating;
-            }
-        }
-        for (auto itr = ratings.begin(); itr != ratings.end(); ++itr) {
-            cout << itr->first << ": " << itr->second["numReviews"] << " review, Average of " << itr->second["totalRatings"] / (double)itr->second["numReviews"] << " / 5" << endl;
-        }
-        myfile.close();
+    /*
+    for (int i = 0; i < numberOfRatings; ++i) {
+        getline(myFile, nameOfMovie);
+        myFile >> movieRating;
+        myFile.ignore();
+        ++mapReviews[nameOfMovie][movieRating];
     }
-    else 
+    */
+
+    for (int i = 0; i < numberOfRatings; ++i) {
+        getline(myFile, nameOfMovie); 
+        myFile >> movieRating; 
+        myFile.ignore(); 
+        ++mapReviews[nameOfMovie][movieRating]; 
+    }
+    map<int, int>::iterator mapIter1;
+    map<string, map<int, int> >::iterator mapIter2;
+    for (mapIter2 = mapReviews.begin(); mapIter2 != mapReviews.end(); ++mapIter2)
     {
-        cout << "File Not Found! " << endl;
+        int total = 0, c = 0;
+
+        for (mapIter1 = mapIter2->second.begin(); mapIter1 != mapIter2->second.end(); mapIter1++)
+        {
+            total += mapIter1->first;
+            c++;
+        }
+        double totalAverage = (double)total / c;
+
+        cout << fixed << std::setprecision(2);
+        cout << mapIter2->first << ": " << c << " reviews, average of " << totalAverage << " / 5\n" << endl;;
     }
 
     return 0;
-
 }
