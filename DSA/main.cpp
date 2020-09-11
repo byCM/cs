@@ -51,14 +51,42 @@ void readEmails(LinkedList<Term>* documents[], string filenames, string basepath
 // Complete this function for part C
 float compareDocuments(LinkedList<Term>* targetList, LinkedList<Term>* sourceList)
 {
-    return 0; // Stub
+    Node<Term>* node = sourceList->getHead();
+    Node<Term>* node1 = sourceList->getHead();
+    int counter = 0;
+    while (node)
+    {
+        if (targetList->find(node->getItem()))
+        {
+            counter++;
+        }
+        node = node->getNext();
+    }
+    int total = 0;
+    while (node)
+    {
+        total++;
+        node = node->getNext();
+    }
+    //   int total = sourceList->
+    return float(counter) / total;
 }
 
 // Complete this function for part D
 float closestMatch(LinkedList<Term>* targetDocuments[], int numDocs, LinkedList<Term>* sourceDocument)
 {
-    return 0; // Stub
+    float max = 0;
+    for (int i = 0; i < numDocs; i++)
+    {
+        float res = compareDocuments(targetDocuments[i], sourceDocument);
+        if (res > max)
+        {
+            max = res;
+        }
+    }
+    return max;
 }
+
 
 // ******************* Main ********************
 //
