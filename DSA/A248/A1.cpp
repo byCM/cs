@@ -3,7 +3,6 @@
 
 using namespace std;
 
-
 void countSet(unsigned long long decimalnum)
 {
     unsigned long long binarynum = 0, temp = 1, num;
@@ -34,13 +33,11 @@ void countSet(unsigned long long decimalnum)
 
 int main()
 {
-    //variable declaration
     long long num;
 
-    //input a positive integer
     cout << "Enter a decimal integer value: ";
     cin >> num;
-    //function calling
+
     countSet(num);
 
     return 0;
