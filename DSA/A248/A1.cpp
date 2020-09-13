@@ -3,26 +3,27 @@
 
 using namespace std;
 
-void countSet(unsigned long long decimalnum)
+void countSet(unsigned long long decimal)
 {
     unsigned long long binarynum = 0, temp = 1, num;
     int rem;
-    num = decimalnum;
+    num = decimal;
     int i = 0, set = 0;
     int arr[32];
 
     while (i < 32)
     {
-        rem = decimalnum % 2;
-        decimalnum = decimalnum / 2;
-        temp = temp * 10;
+        rem = decimal % 2;
+        decimal /= 2;
+
+        temp *= 10;
         arr[i] = rem;
         i++;
         if (rem == 1)
             set++;
     }
 
-    cout << endl << "The binary representation is: ";
+    cout << endl << "Binary Representation: ";
     {
         for (int i = 31; i >= 0; i--)
             cout << arr[i];
