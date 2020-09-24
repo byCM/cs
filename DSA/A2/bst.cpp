@@ -24,7 +24,7 @@ bool BST<T>::checkBST(Node<T>* tree) {
 				return false;
 			}
 
-			result &=checkBST(left);
+			//result &=checkBST(left);
 
 		}
 		if (right != nullptr) {
@@ -34,7 +34,7 @@ bool BST<T>::checkBST(Node<T>* tree) {
 				return false;
 			}
 
-			result &= checkBST(right);
+			result &= checkBST(left) && checkBST(right);
 
 		}
 
