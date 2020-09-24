@@ -7,6 +7,46 @@ BST<T>::BST() : root(nullptr)
 {
 }
 
+
+
+template<class T>
+bool BST<T>::checkBST(Node<T>* tree) {
+
+	bool result = true;
+	if (tree) {
+
+		Node<T>* left = tree->getLeft();
+		Node<T>* right = tree->getRight();
+
+		// only check *left* if left isnt empty!
+		if (left != nullptr) {
+			if (tree->getItem() < left->getItem()) {
+				return false;
+			}
+
+			result &=checkBST(left);
+
+		}
+		if (right != nullptr) {
+			// if this node is less than its right child
+			if (tree->getItem() < right->getItem()) {
+				// thats bad
+				return false;
+			}
+
+			result &= checkBST(right);
+
+		}
+
+	}
+
+
+return result;
+}
+
+
+
+
 template<class T>
 BST<T>::~BST() 
 {
