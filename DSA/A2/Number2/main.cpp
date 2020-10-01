@@ -4,6 +4,8 @@
 #include <vector>
 #include "bst.h"
 #include "term.h"
+#include "node.h"
+
 
 using namespace std;
 
@@ -11,6 +13,17 @@ using namespace std;
 #define NUM_SPAM_TRAIN 350
 #define NUM_NONSPAM_TEST 130
 #define NUM_NONSPAM_TRAIN 350
+
+/*
+REDONE USING BST
+
+
+find is much faster. lg n insted of n. O(lg n) vs O(n)
+
+
+
+
+*/
 
 // **** Reads a single email and returns it as a LinkedList<Term>*
 BST<Term>* readEmail(string filename)
@@ -56,13 +69,16 @@ void readEmails(BST<Term>* documents[], string filenames, string basepath)
   filelist.close();
 }
 
-void compareHelper(Node<Term>* sourceNode,  BST<Term>* targetList, int& matches, int& total) {
-    totals++;
-    compareHelper(sourceNode->getLeft(), targetList, matches, totals);
+//helper function in order traversal
+void compareHelper(Node<Term>* sourceNode, BST<Term>* targetList, int& matches, int& total) {
+    total++;
+    compareHelper(sourceNode->getLeft(), targetList, matches, total);
+
     if (targetList->find(sourceNode->getItem())) {
         matches++;
     }
-    compareHelper(sourceNode->getRight(), targetList, matches, totals);
+
+    compareHelper(sourceNode->getRight(), targetList, matches, total);
 
 }
 
@@ -71,11 +87,11 @@ void compareHelper(Node<Term>* sourceNode,  BST<Term>* targetList, int& matches,
 float compareDocuments(BST<Term>* targetList, BST<Term>* sourceList)
 {
   // Go through each term in sourceList, and count how many of them exist in targeList 
-  Node<Term> *root = sourceList->getRoot());
+  Node<Term> *root = sourceList->getHead());
   int total = 0;
   int matches = 0;
 
-  compareHelper(sourceList->getRoot(), targetList, matches, total);
+  compareHelper(sourceList->getHead(), targetList, matches, total);
 
   if (total == 0)
 	return 0;
@@ -141,7 +157,3 @@ int main()
  	(float) (correctnonSpam + correctnonSpam) / (NUM_NONSPAM_TEST + NUM_SPAM_TEST) << endl;
 
 }
-
-
-
-
