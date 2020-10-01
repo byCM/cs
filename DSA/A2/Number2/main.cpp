@@ -15,11 +15,10 @@ using namespace std;
 #define NUM_NONSPAM_TRAIN 350
 
 /*
-REDONE USING BST
+RE-DONE USING BST 
 
 
 find is much faster. lg n insted of n. O(lg n) vs O(n)
-
 
 
 
