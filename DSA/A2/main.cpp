@@ -50,11 +50,8 @@ int main()
         cout << "in";
     }
     cout << "valid" << endl;
-    // return is the end of the program so before here
+
     return 0;
-
-
 }
-
 
 
