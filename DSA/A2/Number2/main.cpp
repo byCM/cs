@@ -86,11 +86,11 @@ void compareHelper(Node<Term>* sourceNode, BST<Term>* targetList, int& matches, 
 float compareDocuments(BST<Term>* targetList, BST<Term>* sourceList)
 {
   // Go through each term in sourceList, and count how many of them exist in targeList 
-  Node<Term> *root = sourceList->getHead());
+  Node<Term> *root = sourceList->getRoot());
   int total = 0;
   int matches = 0;
 
-  compareHelper(sourceList->getHead(), targetList, matches, total);
+  compareHelper(sourceList->getRoot(), targetList, matches, total);
 
   if (total == 0)
 	return 0;
