@@ -15,7 +15,7 @@ Loop:
   mfhi $t0 #load reminder
   beq $t0,$zero,increaseByOne
   j skip
-  increaseByOne:
+increaseByOne:
   add $t6,$t6,1 #count ++
 skip:
   add $t7,$t7,4 #get next number
