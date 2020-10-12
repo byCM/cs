@@ -1,13 +1,14 @@
 // DB SYSTEMS CHAPTER 7
 
 1.
-
+       
 select first_name + ' ' + last_name AS customer,
 count(rental_id) AS Rentals,
 sum(amount) AS Total_Amount from customer INNER JOIN payment
 ON customer.customer_id = payment.customer_id
-GROUP BY first_name,last_name
-ORDER BY total_amount desc;
+GROUP BY customer.first_name, customer.last_name
+ORDER BY total_amount desc
+LIMIT 10;
 
 2.
 
