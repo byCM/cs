@@ -2,7 +2,7 @@
 
 1.
        
-select first_name + ' ' + last_name AS customer,
+select CONCAT_WS(" ", first_name, last_name) AS customer,
 count(rental_id) AS Rentals,
 sum(amount) AS Total_Amount from customer INNER JOIN payment
 ON customer.customer_id = payment.customer_id
