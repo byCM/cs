@@ -2,11 +2,11 @@
 
 1.
        
-select CONCAT_WS(" ", first_name, last_name) AS customer,
+select CONCAT_WS(" ", first_name, last_name) AS Customer,
 count(rental_id) AS Rentals,
 sum(amount) AS Total_Amount from customer INNER JOIN payment
 ON customer.customer_id = payment.customer_id
-GROUP BY customer.first_name, customer.last_name
+GROUP BY first_name, last_name
 ORDER BY total_amount desc
 LIMIT 10;
 
