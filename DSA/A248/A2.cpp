@@ -10,11 +10,6 @@ TypeJ1: .word 2
 TypeJ2: .word 3
 EndI: .word 0
 
-#first instruction is stored in memory location 0x00400000
-
-#and second instruction is stored in location 0x00400004 and so on.
-
-#Every instruction's type(op code) is stored as bit 31-26 in that 32bit
 
 .text
 main:
