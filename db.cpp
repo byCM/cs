@@ -52,11 +52,26 @@ order by count(*) desc
 5.
 
 6.
-select actor.actor_id AS Actor_ID, CONCAT_WS(" ", actor.first_name, actor.last_name) AS Actor,
-film.film_id As Total_films,
-
-FROM inventory, actor, film
-WHERE sharks, crocodiles IN
-(SELECT actor_id, first_name, last_name, 
- 
-ORDER BY rental_amount
+SELECT
+    actor.actor_id AS Actor_ID,
+    CONCAT_WS(
+        " ",
+        actor.first_name,
+        actor.last_name
+    ) AS Actor,
+    COUNT(actor_id) AS Total_films,
+    SUM(amount) AS Total_Films
+FROM
+    actor_id
+INNER JOIN film_actor FROM inventory,
+    actor,
+    film
+WHERE
+    sharks,
+    crocodiles IN(
+    SELECT
+        actor_id,
+        first_name,a
+        last_name,
+    ORDER BY
+        rental_amount
