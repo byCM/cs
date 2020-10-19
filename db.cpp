@@ -15,7 +15,7 @@ LIMIT 10;
 SELECT inventory.inventory_id AS Inventory_ID, film.film_id AS Film_ID,
 title AS Film_Title, store.store_id AS Store_ID, store.store_id AS Store_Location
 
-FROM film FULL JOIN inventory ON
+FROM film INNER JOIN inventory ON
 film.film_id = inventory.film_id
 INNER JOIN store ON
 inventory.store_id = store.store_id
