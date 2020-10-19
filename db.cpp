@@ -12,15 +12,16 @@ LIMIT 10;
 
 2.
 
-select inventory_id as Inventory_ID,film_id as Film_ID,
-title as Film_Title, store_id as Store_ID,
-address as Store_Location
+SELECT inventory.inventory_id AS Inventory_ID, film.film_id AS Film_ID,
+title AS Film_Title, store.store_id AS Store_ID, store.store_id AS Store_Location
 
-from film INNER JOIN inventory ON film.film_id = inventory.film_id
-INNER JOIN store ON inventory.store_id = store.store_id
-INNER JOIN rental ON inventory.inventory_id = rental.inventory_id
-
-where inventory.inventory_id NOT IN(rental.inventory_id);
+FROM film FULL JOIN inventory ON
+film.film_id = inventory.film_id
+INNER JOIN store ON
+inventory.store_id = store.store_id
+INNER JOIN rental ON
+inventory.inventory_id = rental.inventory_id
+WHERE inventory.inventory_id NOT IN(rental.inventory_id);
 
 
 3.
