@@ -125,12 +125,13 @@ DESC
 
 5.
 
-select  film.title , film.film_id, count(*) from 
+select  category.category_ID as Category_ID, category.name as Name, count(*) from 
 film, inventory, rental, category
 where film.film_id = rental.rental_id
 and rental.rental_id = category.category_id
 group by category.category_id, category.name
 order by count(*) desc
+
 
 6.
 SELECT
