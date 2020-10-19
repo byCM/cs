@@ -40,6 +40,42 @@ where f.film_id = i.film_id and t1.inventory_id = i.inventory_id
 select return_status, count(*) as total_number_of_films from the second with clause select the retunr status and count(*) to get total number of films for each type of return status
 from t2
 group by return_status;
+       
+       WITH
+    t1 AS(
+    SELECT
+        *,
+        date_part(
+            ‘day’,
+            NULLIF(return_date, '00-00-0000') - rental_date
+        ) AS date_difference t2 AS(
+        SELECT
+            rental_duration,
+            date_difference,
+            CASE WHEN rental_duration >= date_difference THEN ‘returned
+        ON
+            time’ WHEN rental_duration < date_difference THEN ‘returned late’ WHEN date_difference < 0 THEN ‘not returned’
+    END AS return_status
+FROM
+    film f,
+    inventory i,
+    t1
+WHERE
+    f.film_id = i.film_id AND t1.inventory_id = i.inventory_id
+SELECT
+    return_status,
+    COUNT(*) AS total_number_of_films
+FROM
+    the SECOND WITH clause
+SELECT
+    the retunr
+STATUS AND
+    COUNT(*) TO GET total NUMBER of films FOR EACH TYPE of RETURN
+STATUS
+FROM
+    t2
+GROUP BY
+    return_status;
 
 4.
 
