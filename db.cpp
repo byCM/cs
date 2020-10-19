@@ -10,6 +10,21 @@ GROUP BY first_name, last_name
 ORDER BY total_amount desc
 LIMIT 10;
 
+SELECT
+    CONCAT_WS(" ", first_name, last_name) AS Customer,
+    COUNT(rental_id) AS Rentals,
+    SUM(amount) AS Total_Amount
+FROM
+    customer
+INNER JOIN payment ON customer.customer_id = payment.customer_id
+GROUP BY
+    first_name,
+    last_name
+ORDER BY
+    total_amount
+DESC
+LIMIT 10;
+
 2.
 
 SELECT inventory.inventory_id AS Inventory_ID, film.film_id AS Film_ID,
