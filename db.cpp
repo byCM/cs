@@ -42,10 +42,11 @@ group by return_status;
 
 4.
 
-select film.title , film.inventory_id , count(*) from 
+select film.title , film.film_id , count(*) from
 film, inventory, rental
-where film.film_id = inventory.film_id 
-and inventory.inventory_id = rental.inventory_id 
-group by film.title , film.inventory_id
-having count(*) > 30 
+where film.film_id = inventory.film_id
+and inventory.inventory_id = rental.inventory_id
+group by film.title , film.film_id
+having count(*) > 30
 order by count(*) desc
+
