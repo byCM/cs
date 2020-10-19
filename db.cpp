@@ -25,7 +25,6 @@ WHERE inventory.inventory_id NOT IN(rental.inventory_id);
 
 
 3.
-
 with t1 as (select *, date_part( ‘day’, nullif(return_date,'00-00-0000') - rental_date) as date_difference
 t2 as (select rental_duration, date_difference,
        case 
@@ -50,3 +49,4 @@ group by film.title , film.film_id
 having count(*) > 30
 order by count(*) desc
 
+5.
