@@ -27,7 +27,7 @@ LIMIT 10;
 
 2.
 
-       /* I have no idea why this isn't working. I figured it should be inner join as values are in both tables. */
+       /* I dont know why isn't working. */
 SELECT inventory.inventory_id AS Inventory_ID, film.film_id AS Film_ID,
 title AS Film_Title, store.store_id AS Store_ID, store.store_id AS Store_Location
 
