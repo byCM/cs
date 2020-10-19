@@ -51,6 +51,26 @@ group by film.title , film.film_id
 having count(*) > 30
 order by count(*) desc
 
+SELECT
+    film.title,
+    film.film_id,
+    COUNT(*)
+FROM
+    film,
+    inventory,
+    rental
+WHERE
+    film.film_id = inventory.film_id AND inventory.inventory_id = rental.inventory_id
+GROUP BY
+    film.title,
+    film.film_id
+HAVING
+    COUNT(*) > 30
+ORDER BY
+    COUNT(*)
+DESC
+    
+
 5.
 
 6.
