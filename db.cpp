@@ -132,6 +132,27 @@ and rental.rental_id = category.category_id
 group by category.category_id, category.name
 order by count(*) desc
 
+SELECT
+    category.category_ID AS Category_ID,
+    category.name AS Category,
+    SUM(film.rental_rate) AS Total_Sales,
+    SUM(rental.rental_id) AS Rental_Count
+FROM
+    film,
+    inventory,
+    rental,
+    category
+WHERE
+    film.film_id = rental.rental_id AND rental.rental_id = category.category_id
+GROUP BY
+    category.category_id,
+    category.name,
+    film.rental_rate
+ORDER BY
+    rental_id
+DESC
+    
+
 
 6.
 SELECT
