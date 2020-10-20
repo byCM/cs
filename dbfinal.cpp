@@ -1,4 +1,4 @@
-// DB SYSTEMS CHAPTER 7
+/* DB SYSTEMS CHAPTER 7 - MIchael Ross */
 
 1.
 
