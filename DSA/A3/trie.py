@@ -16,14 +16,14 @@ def __init__(self):
 
 def insertAllKeys(self, words):
    for key in words:
-   self.insert(self.root,key,key)
+      self.insert(self.root,key,key)
   
   
 def insert(self,node,remaining_word,original_word):  
    if remaining_word == "":
       return
-      c = remaining_word[0]     
-      w = ""
+   c = remaining_word[0]     
+   w = ""
   
    if len(remaining_word) == 1:
       w = ""
@@ -60,10 +60,10 @@ def find(self,root, word):
   
 def search_string(self, node, word):
   if node.last:
-   self.word_list.append(word)
+      self.word_list.append(word)
   
-   for a,n in node.children.items():
-   self.search_string(n, word + a)
+  for a,n in node.children.items():
+      self.search_string(n, word + a)
   
 def search_string_based_on_prefix(self, node,key):
   not_found = False
