@@ -3,7 +3,7 @@ VALUES(
     10983,
     '10010',
     '11-May-2018',
-    '55.55',
+    '110.00',
     '30,
        ' OPEN ');
        
@@ -16,7 +16,7 @@ VALUES (10983,
        
 UPDATE CUSTOMER
 SET CUS_DATELSTPUR = ' 11 - May -2018 ',
-CUS_BALANCE = CUS_BALANCE + 55.55
+CUS_BALANCE = CUS_BALANCE + 110.00
 WHERE CUS_CODE = ' 10010 ';
 COMMIT;
        
